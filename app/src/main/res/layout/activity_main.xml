@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="-120dp"
+        android:src="@drawable/shape"
+        android:layout_gravity="right"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="-170dp"
+        >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/icono"
+            android:layout_gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SOLI - Software Life"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ciclo De Vida Del Software"
+                android:textColor="#062132"
+                android:textFontWeight="900"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingrese su correo"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:textColor="#062132"
+            />
+        <EditText
+            android:id="@+id/txtUserR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo@gmail.com"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/persona_icon"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingrese su contraseña"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:textColor="#062132"
+            />
+        <EditText
+            android:id="@+id/txtPassR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/password_icon"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textColor="#FFFFFF"
+            android:background="#062132"
+            android:textFontWeight="700"
+            android:textSize="18dp"
+            android:layout_marginBottom="15dp"
+            android:onClick="IniciarSesion"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="registarse"
+            android:textColor="#FFFFFF"
+            android:background="#062132"
+            android:textFontWeight="700"
+            android:textSize="18dp"
+            android:onClick="Registrarse"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿OLVIDASTES TU COMTRASEÑA?"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="#062132"
+            android:textStyle="bold"
+            android:onClick="RecuperarContraseña"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="-100dp"
+        android:src="@drawable/shape" />
+
+</LinearLayout>
