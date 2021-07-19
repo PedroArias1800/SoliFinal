@@ -16,6 +16,7 @@
         <activity android:name=".P_Ranking">
             x
         </activity>
+        <activity android:name=".AcercaDeActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
