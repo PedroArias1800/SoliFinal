@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MantDePreguntasActivity">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:background="@drawable/btn_back2" />
+
+    <ImageView
+        android:id="@+id/logoSoLi"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_soli"
+        android:layout_below="@id/btnBack"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:text="MANTENIMIENTO DE PREGUNTAS"
+        android:layout_below="@id/logoSoLi"/>
+
+    <GridView
+        android:id="@+id/gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp"
+        android:background="#eeeeee"
+        android:layout_below="@id/title">
+
+    </GridView>
+
+
+
+</RelativeLayout>

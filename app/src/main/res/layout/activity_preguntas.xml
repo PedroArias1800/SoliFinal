@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:background="@drawable/btn_back2" />
+
+    <ImageView
+        android:id="@+id/logoSoLi"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_soli"
+        android:layout_below="@id/btnBack"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:text="PREGUNTAS"
+        android:layout_below="@id/logoSoLi"/>
+
+    <Spinner
+        android:id="@+id/litPreg"
+        style=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@id/title"/>
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="10dp"
+        android:paddingBottom="10dp"
+        android:paddingHorizontal="10dp"
+        android:background="#FCF4EDE9"
+        android:layout_below="@id/litPreg">
+
+        <ImageView
+            android:id="@+id/imgPreg"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/sin_img" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgPreg"
+            android:layout_alignEnd="@+id/imgPreg"
+            android:layout_alignRight="@+id/imgPreg"
+            android:layout_marginTop="-62dp"
+            android:layout_marginEnd="-8dp"
+            android:layout_marginRight="-8dp"
+            android:src="@drawable/add"/>
+
+        <EditText
+            android:id="@+id/enunciado"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:inputType="text|textMultiLine"
+            android:gravity="top"
+            android:background="@color/white"
+            android:textSize="20dp"
+            android:hint="Enunciado"
+            android:layout_below="@id/imgPreg"/>
+
+        <EditText
+            android:id="@+id/respCorecta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingTop="2dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:hint="Respuesta Correcta"
+            android:layout_below="@id/enunciado"/>
+
+        <EditText
+            android:id="@+id/posibleResp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="2dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:hint="Posible Respuesta"
+            android:layout_below="@id/respCorecta"/>
+
+        <EditText
+            android:id="@+id/posibleResp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="2dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:hint="Posible Respuesta"
+            android:layout_below="@id/posibleResp1"/>
+
+        <EditText
+            android:id="@+id/posibleResp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingTop="2dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:textSize="20dp"
+            android:hint="Posible Respuesta"
+            android:layout_below="@id/posibleResp2"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:textSize="22dp"
+        android:text="CANCELAR"
+        android:layout_alignLeft="@+id/body"
+        android:layout_below="@id/body"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:text="GUARDAR"
+        android:layout_below="@id/body"
+        android:layout_toRightOf="@id/btnCancelar"/>
+
+</RelativeLayout>
