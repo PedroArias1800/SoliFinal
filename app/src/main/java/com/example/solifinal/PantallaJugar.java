@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.solifinal.Dialogs.Retroalimentacion;
+
 public class PantallaJugar extends AppCompatActivity {
 
     private TextView m,n,p,t; //Modulo, Nivel, Pregunta, Tiempo
@@ -98,18 +100,22 @@ public class PantallaJugar extends AppCompatActivity {
 
     private void Respuesta(String op){ //Verifica si la respuesta es correcta o no
         DeactBotones(); Stop();
-        String ti = t.getText().toString();
         String correcta = "Respuesta 1"; //Buscar la respuesta correcta de la BD
         if(op.equals(correcta)){
             //Sumar Puntos
-            Toast.makeText(this,"Respuesta Correcta\nTiempo Restante: "+ti,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Respuesta Correcta",Toast.LENGTH_SHORT).show();
         } else{
             //Retroalimentacion
             if(op.equals("Time Up")){
-                Toast.makeText(this,"Se acabó el tiempo.",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Se acabó el tiempo.",Toast.LENGTH_SHORT).show();
             } else{
-                Toast.makeText(this,"Respuesta Incorrecta",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Respuesta Incorrecta",Toast.LENGTH_SHORT).show();
             }
+            Retroalimentacion retro = new Retroalimentacion();
+            Bundle args = new Bundle();
+            args.putString("ResCorrecta",correcta);
+            retro.setArguments(args);
+            retro.show(getSupportFragmentManager(), "retal");
         }
     }
 
