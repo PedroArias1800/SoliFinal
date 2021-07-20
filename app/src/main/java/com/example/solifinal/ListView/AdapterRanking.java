@@ -29,10 +29,10 @@ public class AdapterRanking extends ArrayAdapter<CVID_Usuario>{
         View item = inflater.inflate(R.layout.listview_pranking, null);
 
         TextView lblNombre = (TextView)item.findViewById(R.id.lblNombre);
-        lblNombre.setText(ranking.get(position).getFirstname()+" "+ranking.get(position).getLastname());
+        /*lblNombre.setText(ranking.get(position).getFirstname()+" "+ranking.get(position).getLastname());
 
         TextView lblCorreo = (TextView)item.findViewById(R.id.lblCorreo);
-        lblCorreo.setText(ranking.get(position).getEmail());
+        lblCorreo.setText(ranking.get(position).getEmail());*/
 
         return(item);
     }

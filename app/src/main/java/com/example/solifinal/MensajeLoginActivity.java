@@ -1,10 +1,17 @@
 package com.example.solifinal;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,13 +20,13 @@ import com.example.solifinal.Entidades.CVID_Estudiante;
 
 public class MensajeLoginActivity extends AppCompatActivity {
 
-    private Handler handler = new Handler();
-
     ImageView imgCargando;
     TextView txtNombre;
 
     private String Nombre, Tipaje;
     private int Tipo;
+
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +34,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mensaje_login);
         Intent i = getIntent();
         Nombre = i.getStringExtra("Nombre");
-        Tipo = i.getIntExtra("Tipo",0);
+        Tipo = i.getIntExtra("Tipaje",0);
         InicializarControles();
 
     }
@@ -52,7 +59,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), RegistrarseActivity.class));
+                startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
             }
         }, 4000);
     }

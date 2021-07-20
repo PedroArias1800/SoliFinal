@@ -51,6 +51,79 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jugar"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:onClick="OpcionJugar"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ranking"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:onClick="OpcionRanking"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acerca De"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:onClick="OpcionAcercaDe"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Infografía"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:onClick="OpcionInfografía"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ad. Preguntas"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:onClick="OpcionAdPreguntas"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ad. Usuarios"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:onClick="OpcionAdUsuarios"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_utp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

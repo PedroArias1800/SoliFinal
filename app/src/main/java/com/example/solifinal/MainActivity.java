@@ -44,20 +44,20 @@ public class MainActivity extends AppCompatActivity {
                         CVID_Estudiante estudiante = response.body();
                         if (estudiante != null){
 
-                            CVID_Usuario user =
-                                    new CVID_Usuario(
-                                            Integer.parseInt(estudiante.getId()),
-                                            estudiante.getEmail(),
-                                            "",
-                                            estudiante.getNombre_completo()
-                                    );
+                            CVID_Usuario user = new CVID_Usuario(
+                                Integer.parseInt(estudiante.getId()),
+                                estudiante.getEmail(),
+                                "",
+                                estudiante.getNombre_completo()
+                            );
 
                             _db.GuardarSessionUsuario(user);
 
-                            Toast.makeText(getApplicationContext(),"Se loguea coool desde el api",Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(getApplicationContext(),MensajeLoginActivity.class);
+                            Toast.makeText(getApplicationContext(),"Login Exitoso",Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(getApplicationContext(),MenuLoginActivity.class);
                             i.putExtra("Nombre", estudiante.getNombre_completo());
-                            i.putExtra("Tipo", estudiante.getTipo());
+                            i.putExtra("Tipaje", estudiante.getTipo());
+                            startActivity(i);
                         }
                     }else {
                         int x = 1;
@@ -66,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<CVID_Estudiante> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(),"Error Al Iniciar Sesión",Toast.LENGTH_LONG).show();
                     int x = 1;
                 }
             });
         }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error Al Iniciar Sesión",Toast.LENGTH_LONG).show();
             int x = 1;
         }
     }
