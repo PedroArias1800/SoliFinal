@@ -6,24 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.solifinal.BaseDeDatos.ProcesosDB;
-import com.example.solifinal.Entidades.CVID_Usuario;
-import com.example.solifinal.ListView.AdapterRanking;
 import com.example.solifinal.ListView.AdapterRankingPuntaje;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class P_Ranking extends AppCompatActivity {
+public class PantallaRankingActivity extends AppCompatActivity {
 
     ListView lstranking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pranking);
+        setContentView(R.layout.activity_pantallaranking);
 
         IniciarlizarControles();
     }

@@ -15,7 +15,7 @@ public class ApiService {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-        String baseUrl = "http://127.0.0.1/pseudoapi/";
+        String baseUrl = "http://192.168.1./pseudoapi/";
 
         if (API_SERVICE == null){
             Retrofit retrofit = new Retrofit.Builder()
