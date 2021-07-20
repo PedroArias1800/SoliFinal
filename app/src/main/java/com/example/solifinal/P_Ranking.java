@@ -32,17 +32,17 @@ public class P_Ranking extends AppCompatActivity {
 
         lstranking = (ListView)findViewById(R.id.lstRanking);
         ProcesosDB Pdb = new ProcesosDB(getApplicationContext());
-        AdapterRanking adapterRanking = new AdapterRanking(getApplicationContext(), Pdb.ObtenerRanking());//CREAR EL MOTEDO EN DB PROCESS
-        lstranking.setAdapter(adapterRanking);
+        //AdapterRanking adapterRanking = new AdapterRanking(getApplicationContext(), Pdb.ObtenerRanking());//CREAR EL MOTEDO EN DB PROCESS
+        //lstranking.setAdapter(adapterRanking);
         AdapterRankingPuntaje adapterRankingPuntaje = new AdapterRankingPuntaje(getApplicationContext(), Pdb.ObtenerRanking2());
         lstranking.setAdapter(adapterRankingPuntaje);
 
         lstranking.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                String opcionSeleccionada =
-                        ((CVID_Usuario) a.getItemAtPosition(position)).getFirstname();
+            //    String opcionSeleccionada =
+                       // ((CVID_Usuario) a.getItemAtPosition(position)).getFirstname();
 
-                Toast.makeText(P_Ranking.this,  (position+1)+" Posición del ranking: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
+            //    Toast.makeText(P_Ranking.this,  (position+1)+" Posición del ranking: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
             }
         });
     }

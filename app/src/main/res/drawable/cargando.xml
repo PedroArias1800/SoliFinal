@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/carga0" android:duration="100"/>
+    <item android:drawable="@drawable/carga1" android:duration="100"/>
+    <item android:drawable="@drawable/carga2" android:duration="100"/>
+    <item android:drawable="@drawable/carga3" android:duration="100"/>
+    <item android:drawable="@drawable/carga4" android:duration="100"/>
+    <item android:drawable="@drawable/carga5" android:duration="100"/>
+    <item android:drawable="@drawable/carga6" android:duration="100"/>
+    <item android:drawable="@drawable/carga7" android:duration="100"/>
+    <item android:drawable="@drawable/carga8" android:duration="100"/>
+    <item android:drawable="@drawable/carga9" android:duration="100"/>
+    <item android:drawable="@drawable/carga10" android:duration="100"/>
+    <item android:drawable="@drawable/carga11" android:duration="100"/>
+
+</animation-list>

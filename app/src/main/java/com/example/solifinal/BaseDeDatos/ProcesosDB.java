@@ -1,5 +1,6 @@
 package com.example.solifinal.BaseDeDatos;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,27 +13,25 @@ import java.util.List;
 
 public class ProcesosDB{
 
-    HacerProcesos puntaje; // CREANDO UNA VARIABLE DE TIPO UsuarioDbHelper//
+    HacerProcesos hacerProcesos;
 
-    public ProcesosDB(Context context) { // EL CONTEXTO SIEMPRE CAMBIA POR ACTIVITY POR ESO DEBO DE RECIBIRLO//
-        puntaje = new HacerProcesos(context, "SOLI", null, 1); // ULTIMO VALOR ES LA VERSION DE LA BASE DE DATOS EMPLEADA//
-        // _dbc = new ComidaDbHelper(context, "Usuarios", null, 1);//OBJETO DE RECETAS
+    public ProcesosDB(Context context) {
+        hacerProcesos = new HacerProcesos(context, "juegos", null, 1);
     }
-
-    // METODO PARA OBTENER INFORMACION DE CVID_PUNTAJE//
+/*
     public List<CVID_Usuario> ObtenerRanking() {
         try {
-            SQLiteDatabase db = puntaje.getReadableDatabase();
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
             if (db != null) {
-                String[] campos = new String[]{"firstName", "lastName", "email"};//1. CREO UN ARRREGLO PARA CONSULTAR LOS CAMPOS EN LA BD//
+                String[] campos = new String[]{"firstName", "lastName", "email"};
                 List<CVID_Usuario> U = new ArrayList<>();
 
                 Cursor cursor = db.query("cvid_usuario", campos, null, null, "ID_usuario", null, null); //2. CREAR UN CURSOR Y PASO NOMBRE DE LA TABLA Y CAMPOS A CONSULTAR DE ESA TABLA
-                if (cursor.moveToFirst()) {// VERIFICA SI EL CURSOR TIENE DATOS PARA MOVERSE Y LO MUEVE A LA PRIMERA POSICION PARA SABER SI TIENE DATOS//
-                    do {//PARA VERIFIACR QUE EXISTA ALGO POR LO MENOS EN LA PRIMERA POSICION
-                        CVID_Usuario user = new CVID_Usuario(// JALAR LOS DATOS DE CADA FILA
+                if (cursor.moveToFirst()) {
+                    do {
+                        CVID_Usuario user = new CVID_Usuario(
                                 cursor.getString(0),
-                                cursor.getString(1),// posicion de las columnas a guardar y ME GUIO DE MI ARREGLO DE CAMPOS//
+                                cursor.getString(1),
                                 cursor.getString(2)
                         );
                         U.add(user);
@@ -45,12 +44,11 @@ public class ProcesosDB{
         } catch (Exception e) {}
         return null;
 
-    }
+    }*/
 
-    // METODO PARA OBTENER INFORMACION DE CVID_PUNTAJE//
     public List<CVID_Puntaje> ObtenerRanking2() {
         try {
-            SQLiteDatabase db = puntaje.getReadableDatabase();
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
             if (db != null) {
                 String[] campos = new String[]{"experienciaAvance"};//1. CREO UN ARRREGLO PARA CONSULTAR LOS CAMPOS EN LA BD//
                 List<CVID_Puntaje> P = new ArrayList<>();
@@ -71,6 +69,25 @@ public class ProcesosDB{
         } catch (Exception e) {}
         return null;
 
+    }
+
+    public Boolean GuardarSessionUsuario(CVID_Usuario usuario){
+        try{
+            SQLiteDatabase db = hacerProcesos.getWritableDatabase();
+            if (db != null){
+                db.delete("session",null,null);
+                ContentValues values = new ContentValues();
+                values.put("id",usuario.getId());
+                values.put("user",usuario.getUser());
+                values.put("nombre",usuario.getNombre());
+
+                db.insert("session",null,values);
+                db.close();
+                return true;
+            }
+        }
+        catch (Exception e){}
+        return false;
     }
 
 }

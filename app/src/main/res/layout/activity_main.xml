@@ -63,7 +63,7 @@
             android:textColor="#062132"
             />
         <EditText
-            android:id="@+id/txtUserR"
+            android:id="@+id/txtUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Correo@gmail.com"
@@ -83,7 +83,7 @@
             android:textColor="#062132"
             />
         <EditText
-            android:id="@+id/txtPassR"
+            android:id="@+id/txtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
