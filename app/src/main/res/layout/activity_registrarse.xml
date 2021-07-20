@@ -1,9 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RegistrarseActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Crear Nuevo Usuario"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:layout_below="@+id/textView"
+        android:id="@+id/TextInputNombre"
+        android:layout_width="350dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:hint="Nombre"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_below="@+id/TextInputNombre"
+        android:id="@+id/TextInputApellido"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:hint="Apellido"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_below="@+id/TextInputApellido"
+        android:id="@+id/TextInputpassword"
+        android:layout_width="350dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:hint="Contraseña "
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_below="@+id/TextInputpassword"
+        android:id="@+id/TextInputrepPassword"
+        android:layout_width="350dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:hint="Repetir Contraseña "
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_below="@+id/TextInputrepPassword"
+        android:id="@+id/TextInputEmail"
+        android:layout_width="350dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:hint="Email "
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/TextInputEmail"
+        android:id="@+id/TextInputCedula"
+        android:layout_width="350dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="Cedula"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/btn_crear"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/TextInputCedula"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Crear Usuario "
+        android:backgroundTint="#AA4646"
+        />
+
+    <ImageView
+        android:id="@+id/imv_1"
+        android:layout_below="@+id/btn_crear"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher_background">
+    </ImageView>
+
+
+
+
+</RelativeLayout>
