@@ -47,13 +47,22 @@
             android:gravity="center"
             android:layout_marginTop="15dp"/>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DesplegarLogOut"
+            android:src="@drawable/logout"
+            android:layout_gravity="right"
+            android:layout_marginTop="-33dp"
+            android:layout_marginRight="10dp"
+            android:onClick="LogOut"/>
+
     </GridLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="25dp">
+        android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
@@ -61,7 +70,8 @@
             android:text="Jugar"
             android:textSize="25dp"
             android:layout_marginTop="10dp"
-            android:onClick="OpcionJugar"/>
+            android:onClick="OpcionJugar"
+            android:id="@+id/btnJugar"/>
 
         <Button
             android:layout_width="match_parent"
@@ -69,7 +79,8 @@
             android:text="Ranking"
             android:textSize="25dp"
             android:layout_marginTop="10dp"
-            android:onClick="OpcionRanking"/>
+            android:onClick="OpcionRanking"
+            android:id="@+id/btnRanking"/>
 
         <Button
             android:layout_width="match_parent"
@@ -77,7 +88,8 @@
             android:text="Acerca De"
             android:textSize="25dp"
             android:layout_marginTop="10dp"
-            android:onClick="OpcionAcercaDe"/>
+            android:onClick="OpcionAcercaDe"
+            android:id="@+id/btnAcercaDe"/>
 
         <Button
             android:layout_width="match_parent"
@@ -85,7 +97,9 @@
             android:text="Infografía"
             android:textSize="25dp"
             android:layout_marginTop="10dp"
-            android:onClick="OpcionInfografía"/>
+            android:onClick="OpcionInfografia"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/btnInfografia"/>
 
         <Button
             android:layout_width="match_parent"
@@ -94,7 +108,9 @@
             android:textSize="25dp"
             android:layout_marginTop="10dp"
             android:visibility="gone"
-            android:onClick="OpcionAdPreguntas"/>
+            android:onClick="OpcionAdPreguntas"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/btnPregunta"/>
 
         <Button
             android:layout_width="match_parent"
@@ -103,7 +119,58 @@
             android:textSize="25dp"
             android:layout_marginTop="10dp"
             android:visibility="gone"
-            android:onClick="OpcionAdUsuarios"/>
+            android:onClick="OpcionAdUsuarios"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/btnUsuario"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtSalir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Estás seguro que quieres cerrar sesión?"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      Cancelar"
+                android:onClick="BotonCancelar"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btnSalir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:layout_marginLeft="50dp"
+                android:onClick="CerrarSesion"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cancel"
+            android:layout_marginTop="-40dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/imgCancelar"/>
 
     </LinearLayout>
 
