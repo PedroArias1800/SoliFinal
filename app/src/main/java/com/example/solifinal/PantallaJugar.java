@@ -10,10 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.solifinal.Dialogs.Retroalimentacion;
 
 public class PantallaJugar extends AppCompatActivity {
+
+    /*
+    Intent ip = getIntent();
+    private int puntos = ip.getIntExtra("Puntaje",0);
+     */
+    private int puntos = 0;
 
     private TextView m,n,p,t; //Modulo, Nivel, Pregunta, Tiempo
     private Button r1,r2,r3,r4,s; //Respuestas 1-4, siguiente
@@ -102,14 +107,13 @@ public class PantallaJugar extends AppCompatActivity {
         DeactBotones(); Stop();
         String correcta = "Respuesta 1"; //Buscar la respuesta correcta de la BD
         if(op.equals(correcta)){
-            //Sumar Puntos
-            Toast.makeText(this,"Respuesta Correcta",Toast.LENGTH_SHORT).show();
+            puntos+=1;
+            Toast.makeText(this,"Respuesta Correcta",Toast.LENGTH_LONG).show();
         } else{
-            //Retroalimentacion
             if(op.equals("Time Up")){
-                Toast.makeText(this,"Se acabó el tiempo.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Se acabó el tiempo.",Toast.LENGTH_LONG).show();
             } else{
-                Toast.makeText(this,"Respuesta Incorrecta",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Respuesta Incorrecta",Toast.LENGTH_LONG).show();
             }
             Retroalimentacion retro = new Retroalimentacion();
             Bundle args = new Bundle();
@@ -137,6 +141,7 @@ public class PantallaJugar extends AppCompatActivity {
     //Avanza a la siguiente pregunta
     public void SigPreg(View view){
         Intent i = new Intent(this, PantallaJugar.class);
+        i.putExtra("Puntaje", puntos);
         startActivity(i);
     }
 

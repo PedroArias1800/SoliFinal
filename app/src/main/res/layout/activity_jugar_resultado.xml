@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JugarResultado">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8C001C">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="SOLI"/>
+
+        <ImageView
+            android:id="@+id/utp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toStartOf="@+id/fisc"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            android:src="@drawable/logo_utp"
+            android:layout_toLeftOf="@+id/fisc" />
+
+        <ImageView
+            android:id="@+id/fisc"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/modnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Módulo X"/>
+
+        <TextView
+            android:id="@+id/nivnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Nivel X"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="-----RESULTADO-----"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                android:text="Puntaje:"/>
+
+            <TextView
+                android:id="@+id/pts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="30sp"
+                android:text="00"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/panmod"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#8C001C"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:textColor="@color/white"
+            android:text="Volver a la Pantalla de Módulos"
+            android:onClick="Terminar"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
