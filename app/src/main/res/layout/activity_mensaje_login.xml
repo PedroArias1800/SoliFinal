@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".MensajeLoginActivity"
     >
     <ImageView
         android:layout_width="200dp"
@@ -92,10 +92,10 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginLeft="-100dp"
-        android:src="@drawable/shape" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Menu"
+        android:text="Ir Al Menu Principal"/>
 
 </LinearLayout>

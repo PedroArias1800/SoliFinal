@@ -26,15 +26,17 @@ public class MensajeLoginActivity extends AppCompatActivity {
     private String Nombre, Tipaje;
     private int Tipo;
 
+    Intent i;
+
     Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensaje_login);
-       Intent i = getIntent();
+        i = getIntent();
         Nombre = i.getStringExtra("Nombre");
-        Tipo = i.getIntExtra("Tipaje",0);
+        Tipo = i.getIntExtra("Tipaje",2);
         InicializarControles();
 
     }
@@ -55,12 +57,17 @@ public class MensajeLoginActivity extends AppCompatActivity {
         imgCargando = (ImageView)findViewById(R.id.imgCargando);
         imgCargando.setBackgroundResource(R.drawable.cargando);
 
-        handler.postDelayed(new Runnable() {
+        /*handler.postDelayed(new Runnable() {
 
             @Override
             public void run() {
                 startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
             }
-        }, 4000);
+        }, 4000);*/
+
+    }
+
+    public void Menu(View v){
+        startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
     }
 }
