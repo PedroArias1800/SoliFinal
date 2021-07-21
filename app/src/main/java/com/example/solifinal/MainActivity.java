@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         _db = new ProcesosDB(getApplicationContext());
 
         u = (EditText)findViewById(R.id.txtUser);
-        p = (EditText)findViewById(R.id.txtPasss);
+        p = (EditText)findViewById(R.id.txtPass);
 
-       // ValidarSession();
+        _db.CerrarSesion();
     }
 
 

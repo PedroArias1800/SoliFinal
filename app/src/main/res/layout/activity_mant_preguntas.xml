@@ -10,14 +10,14 @@
         android:id="@+id/btnBack"
         android:layout_width="70dp"
         android:layout_height="45dp"
-        android:background="@drawable/btn_back2" />
+        android:background="@drawable/ic_launcher_background" />
 
     <ImageView
         android:id="@+id/logoSoLi"
         android:layout_width="190dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_soli"
+        android:src="@drawable/ic_launcher_background"
         android:layout_below="@id/btnBack"/>
 
     <TextView

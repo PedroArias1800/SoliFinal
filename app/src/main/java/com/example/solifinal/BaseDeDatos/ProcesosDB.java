@@ -81,7 +81,7 @@ public class ProcesosDB{
                 values.put("user",usuario.getUser());
                 values.put("nombre",usuario.getNombre());
 
-                db.insert("session",null,values);
+                db.insert("cvid_sesion",null,values);
                 db.close();
                 return true;
             }
@@ -111,5 +111,16 @@ public class ProcesosDB{
             return  null;}
         return null;
     }
+
+        public Boolean CerrarSesion(){
+        try {
+            SQLiteDatabase db = hacerProcesos.getWritableDatabase();// PRIMER PASO ABRIR LA BASE DE DATOS PARA ESCRITURA//
+            if (db!=null) {
+                db.delete("cvid_sesion", "id", null);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
+                return true;
+            }
+        } catch (Exception e) {
+        }
+        return false;
 
 }
