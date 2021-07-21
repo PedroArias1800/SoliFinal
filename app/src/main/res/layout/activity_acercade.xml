@@ -45,7 +45,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Click Aquí"
-            />
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 
@@ -67,7 +71,12 @@
             android:onClick="btnEquipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click Aquí"/>
+            android:text="Click Aquí"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 

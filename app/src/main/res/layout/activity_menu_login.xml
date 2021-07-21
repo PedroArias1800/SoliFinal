@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DesplegarLogOut"
-            android:src="@drawable/logout"
+            android:src="@drawable/salirwh"
             android:layout_gravity="right"
             android:layout_marginTop="-33dp"
             android:layout_marginRight="10dp"
@@ -82,7 +82,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
         <Button
@@ -98,7 +97,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
         <Button
@@ -114,7 +112,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
         <Button
@@ -131,7 +128,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
         <Button
@@ -148,7 +144,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
         <Button
@@ -165,7 +160,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
-            android:layout_marginRight="10dp"
             android:backgroundTint="@color/white"/>
 
     </LinearLayout>
@@ -201,6 +195,11 @@
                 android:text="     Cancelar"
                 android:onClick="BotonCancelar"
                 android:visibility="gone"
+                style="?attr/materialButtonOutlinedStyle"
+                app:cornerRadius="20dp"
+                app:strokeColor="#0026f0"
+                android:textColor="#0026f0"
+                android:backgroundTint="@color/white"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="60dp"/>
 
@@ -212,6 +211,11 @@
                 android:layout_marginLeft="50dp"
                 android:onClick="CerrarSesion"
                 android:visibility="gone"
+                style="?attr/materialButtonOutlinedStyle"
+                app:cornerRadius="20dp"
+                app:strokeColor="#0026f0"
+                android:textColor="#0026f0"
+                android:backgroundTint="@color/white"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="60dp"/>
 
@@ -221,7 +225,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-100dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="22dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 

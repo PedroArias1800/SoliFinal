@@ -1,145 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistrarseActivity">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="RegistrarEstudiante"
-        android:text="registrarse"/>
+    tools:context=".RegistrarseActivity"
+    android:background="@drawable/fondo1">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:text="Crear Nuevo Usuario"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:gravity="center_horizontal" />
-
-    <EditText
-        android:layout_below="@+id/textView"
-        android:id="@+id/TextInputNombre"
-        android:layout_width="350dp"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:layout_marginTop="10dp"
-        android:hint="Nombre"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_below="@+id/TextInputNombre"
-        android:id="@+id/TextInputApellido"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginTop="10dp"
-        android:hint="Apellido"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soli - Software Life"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:layout_below="@+id/TextInputApellido"
-        android:id="@+id/TextInputpassword"
-        android:layout_width="350dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"
-        android:hint="Contraseña "
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciclo De Vida Del Software"
+            android:textSize="23dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:layout_below="@+id/TextInputpassword"
-        android:id="@+id/TextInputrepPassword"
-        android:layout_width="350dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"
-        android:hint="Repetir Contraseña "
-        android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrarse"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"/>
 
-    <EditText
-        android:layout_below="@+id/TextInputrepPassword"
-        android:id="@+id/TextInputEmail"
-        android:layout_width="350dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:hint="Email "
-        android:layout_centerInParent="true"/>
-    <EditText
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/TextInputEmail"
-        android:id="@+id/txtEdad"
-        android:layout_width="350dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_gravity="center_horizontal"
-        android:hint="Edad"/>
+    </GridLayout>
 
-
-    <EditText
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/txtEdad"
-        android:id="@+id/TextInputCedula"
-        android:layout_width="350dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:hint="Cedula"
-        android:layout_gravity="center_horizontal"/>
-    <Spinner
-        android:id="@+id/spnFacultades"
-        android:layout_below="@+id/TextInputCedula"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre completo"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <EditText
+            android:id="@+id/TextInputNombre"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Nombre"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/TextInputApellido"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Apellido"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <EditText
+            android:id="@+id/TextInputpassword"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Contraseña"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/TextInputrepPassword"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Repetir Contraseña"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <EditText
+            android:id="@+id/TextInputEmail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Email"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/txtEdad"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Edad"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <EditText
+            android:id="@+id/TextInputCedula"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:hint="Cédula"
+            android:layout_gravity="center_horizontal"/>
+
+        <Spinner
+            android:id="@+id/spnFacultades"
+            android:layout_below="@+id/TextInputCedula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Facultad"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_crear"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spnFacultades"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="106dp"
-        android:backgroundTint="#AA4646"
-        android:onClick=""
-        android:text="Crear Usuario " />
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="GuardarNuevoUsuario"
+        android:text="Crear Usuario "
+        style="?attr/materialButtonOutlinedStyle"
+        app:cornerRadius="20dp"
+        app:strokeColor="#0026f0"
+        android:textColor="#0026f0"
+        android:backgroundTint="@color/white"/>
 
-    <ImageView
-        android:id="@+id/imv_1"
-        android:layout_below="@+id/btn_crear"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:gravity="center_horizontal">
 
-    </ImageView>
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_utp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btn_crear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher_background">
-    </ImageView>
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
 
+    </LinearLayout>
 
-
-
-</RelativeLayout>
+</LinearLayout>

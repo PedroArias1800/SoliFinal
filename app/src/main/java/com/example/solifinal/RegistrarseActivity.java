@@ -2,6 +2,8 @@ package com.example.solifinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -106,5 +108,15 @@ public class RegistrarseActivity extends AppCompatActivity {
         }catch (Exception e){
             int x= 1;
         }
+    }
+
+    public void Utp(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    public void UtpFisc(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        startActivity(i);
     }
 }

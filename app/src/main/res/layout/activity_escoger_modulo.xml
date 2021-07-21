@@ -5,81 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EscogerModulo"
-    android:orientation="vertical">
-
-
-
-    <TextView
-        android:id="@+id/P_Etext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:text="Escoger Modulo"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:gravity="center_horizontal" />
+    android:orientation="vertical"
+    android:background="@drawable/fondo1"
+    >
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher_background"
-        android:layout_gravity="center"
-        />
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/P_btn1"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Facil"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soli - Software Life"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/P_btn2"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:text="Medio"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciclo De Vida Del Software"
+            android:textSize="23dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/P_btn3"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:text="Dificil"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escoger Dificultad"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"/>
+
+    </GridLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logra poner en práctica todos tus conocimientos acerca del ciclo de vida de software general que se utilizan para el desarrollo de proyectos en la actualidad."
+        android:textSize="15dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/P_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Facil"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/P_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="Medio"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/P_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Dificil"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/P_Atras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="Atrás"
+            />
+
+        <Button
+            android:id="@+id/P_Empezar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Comenzar Prueba"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_margin="12dp"
+        android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_launcher_background"
-            />
-
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_utp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="175dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/ic_launcher_background"
-
-            />
-
-
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>
