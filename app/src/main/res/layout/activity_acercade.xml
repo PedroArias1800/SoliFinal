@@ -6,15 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AcercaDeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo1">
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Acerca De"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginBottom="10dp"
+        android:letterSpacing="0.1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Información Adicional De SOLI:  "
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
 
         <Button
             android:onClick="btnInfo"
@@ -48,7 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Equipo Desarrollador:  "
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
 
         <Button
             android:onClick="btnEquipo"
@@ -64,7 +77,8 @@
         android:layout_marginTop="10dp"
         android:text="Correo de contacto: soli.aprende@gmail.com"
         android:textSize="18dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -72,7 +86,9 @@
         android:text="Redes Sociales:"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,7 +106,8 @@
             app:cornerRadius="20dp"
             app:strokeColor="#ff0000"
             android:textColor="@color/black"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:onClick="btnFB"
@@ -102,7 +119,8 @@
             app:cornerRadius="20dp"
             app:strokeColor="#4864a4"
             android:textColor="@color/black"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 
@@ -117,7 +135,8 @@
         app:cornerRadius="15dp"
         app:strokeColor="#b4149e"
         android:textColor="@color/black"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,16 +146,21 @@
         android:gravity="center">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/logo_utp"
-            android:layout_marginRight="40dp"/>
+            android:layout_marginRight="40dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/logo_fisc"
-            android:layout_marginLeft="40dp"/>
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
 
     </LinearLayout>
 

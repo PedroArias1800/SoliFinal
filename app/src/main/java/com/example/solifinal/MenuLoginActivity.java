@@ -3,6 +3,7 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,7 +48,7 @@ public class MenuLoginActivity extends AppCompatActivity {
         imgDesplegar = (ImageView)findViewById(R.id.DesplegarLogOut);
 
         //Tipo=i.getIntExtra("Tipaje", 3);
-        Tipo=1;
+        Tipo=3;
 
         if(Tipo==3){
             jugar.setVisibility(View.VISIBLE);
@@ -132,6 +133,16 @@ public class MenuLoginActivity extends AppCompatActivity {
     }
 
     public void OpcionAdUsuarios(View view) {
+    }
+
+    public void Utp(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    public void UtpFisc(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        startActivity(i);
     }
 }
 

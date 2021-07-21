@@ -56,7 +56,8 @@
             android:layout_gravity="right"
             android:layout_marginTop="-33dp"
             android:layout_marginRight="10dp"
-            android:onClick="LogOut"/>
+            android:onClick="LogOut"
+            android:background="@color/white"/>
 
     </GridLayout>
 
@@ -65,7 +66,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp">
 
         <Button
             android:layout_width="match_parent"
@@ -75,7 +77,13 @@
             android:layout_marginTop="10dp"
             android:onClick="OpcionJugar"
             android:id="@+id/btnJugar"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:layout_width="match_parent"
@@ -85,7 +93,13 @@
             android:layout_marginTop="10dp"
             android:onClick="OpcionRanking"
             android:id="@+id/btnRanking"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:layout_width="match_parent"
@@ -95,7 +109,13 @@
             android:layout_marginTop="10dp"
             android:onClick="OpcionAcercaDe"
             android:id="@+id/btnAcercaDe"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:layout_width="match_parent"
@@ -106,7 +126,13 @@
             android:onClick="OpcionInfografia"
             android:layout_marginBottom="20dp"
             android:id="@+id/btnInfografia"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:layout_width="match_parent"
@@ -117,7 +143,13 @@
             android:visibility="gone"
             android:onClick="OpcionAdPreguntas"
             android:layout_marginBottom="60dp"
-            android:id="@+id/btnPregunta"/>
+            android:id="@+id/btnPregunta"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:layout_width="match_parent"
@@ -128,7 +160,13 @@
             android:onClick="OpcionAdUsuarios"
             android:layout_marginTop="110dp"
             android:layout_marginBottom="110dp"
-            android:id="@+id/btnUsuario"/>
+            android:id="@+id/btnUsuario"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 
@@ -215,13 +253,19 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:src="@drawable/logo_utp"/>
+            android:src="@drawable/logo_utp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:src="@drawable/logo_fisc"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
 
     </LinearLayout>
 
