@@ -66,7 +66,7 @@ public class CVID_Estudiante {
         this.id = id;
     }
 
-    public int getTipo() {
+   public int getTipo() {
         return tipo;
     }
 

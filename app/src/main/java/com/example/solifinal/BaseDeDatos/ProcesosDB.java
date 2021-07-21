@@ -90,4 +90,26 @@ public class ProcesosDB{
         return false;
     }
 
+    public CVID_Usuario ObtenerUsuarioSession(){
+        try{
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
+            if (db != null){
+                String[] campos = new String[]{"id","user","nombre"};
+                Cursor cursor = db.query("session",campos,null,null,null,null,null);
+                if (cursor.moveToFirst()){
+                    CVID_Usuario session = new CVID_Usuario(
+                            cursor.getInt(0),
+                            cursor.getString(1),
+                            "",
+                            cursor.getString(2)
+                    );
+                    return session;
+                }
+            }
+        }
+        catch (Exception c){
+            return  null;}
+        return null;
+    }
+
 }

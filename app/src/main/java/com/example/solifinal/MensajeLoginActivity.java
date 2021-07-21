@@ -32,7 +32,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensaje_login);
-        Intent i = getIntent();
+       Intent i = getIntent();
         Nombre = i.getStringExtra("Nombre");
         Tipo = i.getIntExtra("Tipaje",0);
         InicializarControles();
@@ -41,7 +41,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
 
     public void InicializarControles(){
 
-        if(Tipo==1){
+        if(Tipo==3){
             Tipaje="Estudiante";
         } else if(Tipo==2){
             Tipaje="Docente";

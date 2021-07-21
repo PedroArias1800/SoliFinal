@@ -27,9 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        _db = new ProcesosDB(getApplicationContext());
+
         u = (EditText)findViewById(R.id.txtUser);
-        p = (EditText)findViewById(R.id.txtPass);
+        p = (EditText)findViewById(R.id.txtPasss);
+
+       // ValidarSession();
     }
+
+
 
     public void IniciarSesion(View v){
         try {
@@ -44,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                         CVID_Estudiante estudiante = response.body();
                         if (estudiante != null){
 
-                            CVID_Usuario user = new CVID_Usuario(
+                            CVID_Usuario user =
+                                    new CVID_Usuario(
                                 Integer.parseInt(estudiante.getId()),
                                 estudiante.getEmail(),
                                 "",
@@ -54,10 +61,16 @@ public class MainActivity extends AppCompatActivity {
                             _db.GuardarSessionUsuario(user);
 
                             Toast.makeText(getApplicationContext(),"Login Exitoso",Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(getApplicationContext(),MenuLoginActivity.class);
+
+                                estudiante.setTipo(3);
+
+
+                            Intent i = new Intent(getApplicationContext(),MensajeLoginActivity.class);
+
                             i.putExtra("Nombre", estudiante.getNombre_completo());
                             i.putExtra("Tipaje", estudiante.getTipo());
                             startActivity(i);
+
                         }
                     }else {
                         int x = 1;

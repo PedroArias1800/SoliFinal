@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     >
+
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -83,7 +84,7 @@
             android:textColor="#062132"
             />
         <EditText
-            android:id="@+id/txtPass"
+            android:id="@+id/txtPasss"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
