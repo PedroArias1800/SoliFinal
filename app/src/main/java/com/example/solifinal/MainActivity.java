@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         _db = new ProcesosDB(getApplicationContext());
 
         u = (EditText)findViewById(R.id.txtUser);
-        p = (EditText)findViewById(R.id.txtPass);
+        p = (EditText)findViewById(R.id.txtPasss);
 
         _db.CerrarSesion();
     }
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                             i.putExtra("Nombre", estudiante.getNombre_completo());
                             i.putExtra("Tipaje", estudiante.getTipo());
+                            _db.AbrirSesion(Integer.parseInt(estudiante.getId()), estudiante.getTipo());
                             startActivity(i);
 
                         }

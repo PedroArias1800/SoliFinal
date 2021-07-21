@@ -112,15 +112,29 @@ public class ProcesosDB{
         return null;
     }
 
-        public Boolean CerrarSesion(){
+    public void AbrirSesion(int x, int y){
         try {
             SQLiteDatabase db = hacerProcesos.getWritableDatabase();// PRIMER PASO ABRIR LA BASE DE DATOS PARA ESCRITURA//
             if (db!=null) {
+                ContentValues values = new ContentValues();
+                values.put("id", x);
+                values.put("tipo", y);
+                db.insert("cvid_sesion", null, values);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
+                db.close();
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    public Boolean CerrarSesion() {
+        try {
+            SQLiteDatabase db = hacerProcesos.getWritableDatabase();// PRIMER PASO ABRIR LA BASE DE DATOS PARA ESCRITURA//
+            if (db != null) {
                 db.delete("cvid_sesion", "id", null);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
                 return true;
             }
         } catch (Exception e) {
         }
         return false;
-
+    }
 }
