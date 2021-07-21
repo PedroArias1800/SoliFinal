@@ -1,69 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="70dp"
-        android:layout_height="45dp"
-        android:background="@drawable/ic_launcher_background" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/fondo1">
 
     <ImageView
-        android:id="@+id/logoSoLi"
-        android:layout_width="190dp"
-        android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_below="@id/btnBack"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_launcher_background"/>
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="24dp"
-        android:textColor="@color/black"
-        android:text="PREGUNTAS"
-        android:layout_below="@id/logoSoLi"/>
-
-    <Spinner
-        android:id="@+id/litPreg"
-        style=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_below="@id/title"/>
+        android:textColor="@color/black"
+        android:text="Mantenimiento De Preguntas"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginBottom="10dp"/>
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/body"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginVertical="10dp"
         android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:paddingHorizontal="10dp"
-        android:background="#FCF4EDE9"
-        android:layout_below="@id/litPreg">
-
-        <ImageView
-            android:id="@+id/imgPreg"
-            android:layout_width="165dp"
-            android:layout_height="165dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/sin_img" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgPreg"
-            android:layout_alignEnd="@+id/imgPreg"
-            android:layout_alignRight="@+id/imgPreg"
-            android:layout_marginTop="-62dp"
-            android:layout_marginEnd="-8dp"
-            android:layout_marginRight="-8dp"
-            android:src="@drawable/ic_launcher_background"/>
+        android:background="#FCF4EDE9">
 
         <EditText
             android:id="@+id/enunciado"
@@ -74,74 +42,141 @@
             android:background="@color/white"
             android:textSize="20dp"
             android:hint="Enunciado"
-            android:layout_below="@id/imgPreg"/>
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnTipoPreg"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnNivelPreg"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/respCorecta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:paddingTop="2dp"
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:textSize="20dp"
             android:hint="Respuesta Correcta"
-            android:layout_below="@id/enunciado"/>
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/posibleResp1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:paddingTop="2dp"
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:textSize="20dp"
             android:hint="Posible Respuesta"
-            android:layout_below="@id/respCorecta"/>
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/posibleResp2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:paddingTop="2dp"
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:textSize="20dp"
             android:hint="Posible Respuesta"
-            android:layout_below="@id/posibleResp1"/>
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/posibleResp3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:paddingTop="2dp"
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:textSize="20dp"
             android:hint="Posible Respuesta"
-            android:layout_below="@id/posibleResp2"/>
-    </RelativeLayout>
+            android:textColor="@color/black"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
-        android:textSize="22dp"
-        android:text="CANCELAR"
-        android:layout_alignLeft="@+id/body"
-        android:layout_below="@id/body"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Cancelar"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Guardar"
+            android:layout_marginLeft="30dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:text="GUARDAR"
-        android:layout_below="@id/body"
-        android:layout_toRightOf="@id/btnCancelar"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_utp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_fisc"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
+
+    </LinearLayout>
+
+</LinearLayout>

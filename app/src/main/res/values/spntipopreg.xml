@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spnTipo">
+        <item>Abierta</item>
+        <item>Opción Múltiple</item>
+        <item>Verdadero Y Falso</item>
+        <item>Mejor Respuesta</item>
+    </string-array>
+</resources>

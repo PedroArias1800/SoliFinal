@@ -10,11 +10,11 @@
     android:background="@drawable/fondo1">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/ic_launcher_background"/>
 
     <TextView

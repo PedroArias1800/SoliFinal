@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PreguntasActivity extends AppCompatActivity {
 
     EditText txt_e, txt_r, txt_pr1, txt_pr2, txt_pr3;
-    ImageView img;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +23,5 @@ public class PreguntasActivity extends AppCompatActivity {
         txt_pr1 = (EditText) findViewById(R.id.posibleResp1);
         txt_pr2 = (EditText) findViewById(R.id.posibleResp2);
         txt_pr3 = (EditText) findViewById(R.id.posibleResp3);
-        img = (ImageView) findViewById(R.id.imgModulo);
     }
 }
