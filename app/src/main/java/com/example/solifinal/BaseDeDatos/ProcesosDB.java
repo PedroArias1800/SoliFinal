@@ -143,7 +143,7 @@ public class ProcesosDB{
             if (db != null){
                 String[] campo = {"partida"};
 
-                Cursor cursor = db.query("partida",campo,"juego='SoLi - Software Life'",null,"partida",null,"partida DESC","1");
+                Cursor cursor = db.query("partida",campo,"juego='3'",null,"partida",null,"partida DESC","1");
                 cursor.moveToFirst();
                 do {
                     partida = cursor.getInt(0) + 1;

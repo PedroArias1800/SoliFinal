@@ -12,21 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoliFinal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EscogerModulo"></activity>
-        <activity android:name=".MenuLoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".PantallaJugar"/>
+        <activity android:name=".EscogerModulo"/>
+        <activity android:name=".MenuLoginActivity"/>
         <activity android:name=".MensajeLoginActivity" />
         <activity android:name=".RegistrarseActivity" />
         <activity android:name=".RecuperarContrasenaActivity" />
         <activity android:name=".PantallaRankingActivity" />
         <activity android:name=".AcercaDeActivity" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

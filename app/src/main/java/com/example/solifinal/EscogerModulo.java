@@ -11,7 +11,8 @@ import android.widget.Button;
 public class EscogerModulo extends AppCompatActivity {
 
     Button facil, medio, dificil, atras, empezar;
-    int nivel;
+    int nivel=0;
+    Intent i;
 
 
     @Override
@@ -69,18 +70,18 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void empezar(View v){
-        Intent i = new Intent(getApplicationContext(),PantallaJugar.class);
+        i = new Intent(getApplicationContext(), PantallaJugar.class);
         i.putExtra("nivel", nivel);
         startActivity(i);
     }
 
     public void Utp(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
 }

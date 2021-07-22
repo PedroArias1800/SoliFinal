@@ -49,8 +49,6 @@ public class PantallaJugar extends AppCompatActivity {
      */
     private int puntos = 0, ni;
 
-    private final int _juegoId = 3;
-
     private TextView m,n,p,t, niv, tipo; //Modulo, Nivel, Pregunta, Tiempo
     private Button r1,r2,r3,r4,s; //Respuestas 1-4, siguiente
 
@@ -66,11 +64,15 @@ public class PantallaJugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantallajugar);
 
-        iniControles();
-        ObtenerPreguntas();
-        Timer();
         i = getIntent();
+
+        iniControles();
+
+        Timer();
+
         ni = i.getIntExtra("nivel", 1);
+
+        ObtenerPreguntas();
 
         _numPartida = _db.ObtenerSiguientePartida();
 
@@ -89,17 +91,17 @@ public class PantallaJugar extends AppCompatActivity {
         t = (TextView)findViewById(R.id.time);
         niv = (TextView)findViewById(R.id.niv);
         tipo = (TextView)findViewById(R.id.TIPO);
-        lnRender = (LinearLayout)findViewById(R.id.renderRespuestas);
-/*
+        lnRender = (LinearLayout)findViewById(R.id.renderRespuestas);/*
+
         r1 = (Button)findViewById(R.id.res1);
         r2 = (Button)findViewById(R.id.res2);
         r3 = (Button)findViewById(R.id.res3);
         r4 = (Button)findViewById(R.id.res4);
-        s = (Button)findViewById(R.id.sig);*/
+        s = (Button)findViewById(R.id.sig); */
     }
 
     private void ObtenerPreguntas() {
-        Call<List<Preguntas>> response = ApiService.getApiService().getPreguntas(ni);
+        Call<List<Preguntas>> response = ApiService.getApiService().getPreguntas();
         response.enqueue(new Callback<List<Preguntas>>() {
             @Override
             public void onResponse(Call<List<Preguntas>> call, Response<List<Preguntas>> response) {

@@ -36,5 +36,5 @@ public interface ApiInterface {
     Call<List<CVID_Preguntas>> getPreguntas(@Query("j") int juego);*/
 
     @GET("api.php?ep=preguntas")
-    Call<List<Preguntas>> getPreguntas(@Query("ni") int ni);
+    Call<List<Preguntas>> getPreguntas();
 }

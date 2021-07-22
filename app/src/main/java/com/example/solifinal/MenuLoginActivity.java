@@ -118,6 +118,7 @@ public class MenuLoginActivity extends AppCompatActivity {
     }
 
     public void OpcionJugar(View view) {
+        startActivity(new Intent(getApplicationContext(), EscogerModulo.class));
     }
 
     public void OpcionRanking(View view) {
