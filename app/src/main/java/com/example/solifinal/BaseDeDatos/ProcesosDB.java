@@ -42,6 +42,61 @@ public class ProcesosDB{
         }
         return 0;
     }
+
+    public List<Partida> ObtenerPartidaById(int partida){
+        try{
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
+            List<Partida> partidas = new ArrayList<>();
+            if (db != null){
+                String[] campos = {"partida","jugador","juego","nivel","pregunta","respuestas","puntaje","fecha","hora"};
+                Cursor cursor = db.query("partida",campos,"partida="+partida,null,null,null,"hora DESC");
+                if (cursor.moveToFirst()){
+                    do{
+                        Partida part = new Partida();
+                        part.setPartida(cursor.getInt(0));
+                        part.setJugador(cursor.getString(1));
+                        part.setJuego(cursor.getString(2));
+                        part.setNivel(cursor.getString(3));
+                        part.setPregunta(cursor.getString(4));
+                        part.setRespuestas(cursor.getString(5));
+                        part.setPuntaje(cursor.getInt(6));
+                        part.setFecha(cursor.getString(7));
+                        part.setHora(cursor.getString(8));
+
+                        partidas.add(part);
+
+                    }while(cursor.moveToNext());
+                }
+            }
+            return partidas;
+        }catch (Exception e){
+            int x = 1;
+        }
+
+        return null;
+    }
+
+    public int ObtenerSiguientePartida(String juego){
+        int partida = 1;
+        try{
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
+            if (db != null){
+                String[] campo = {"partida"};
+
+                Cursor cursor = db.query("partida",campo,"juego='"+juego+"'",null,"partida",null,"partida DESC","1");
+                cursor.moveToFirst();
+                do {
+                    partida = cursor.getInt(0) + 1;
+                }while(cursor.moveToNext());
+
+                return partida;
+            }
+        }catch (Exception e){
+            int x = 1;
+        }
+        return partida;
+    }
+
 /*
     public List<CVID_Usuario> ObtenerRanking() {
         try {
@@ -105,7 +160,7 @@ public class ProcesosDB{
                 values.put("user",usuario.getUser());
                 values.put("nombre",usuario.getNombre());
 
-                db.insert("cvid_sesion",null,values);
+                db.insert("session",null,values);
                 db.close();
                 return true;
             }
@@ -155,20 +210,6 @@ public class ProcesosDB{
             int x = 1;
         }
         return partida;
-    }
-
-    public void AbrirSesion(int x, int y){
-        try {
-            SQLiteDatabase db = hacerProcesos.getWritableDatabase();// PRIMER PASO ABRIR LA BASE DE DATOS PARA ESCRITURA//
-            if (db!=null) {
-                ContentValues values = new ContentValues();
-                values.put("id", x);
-                values.put("tipo", y);
-                db.insert("session", null, values);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
-                db.close();
-            }
-        } catch (Exception e) {
-        }
     }
 
     public Boolean CerrarSesion() {

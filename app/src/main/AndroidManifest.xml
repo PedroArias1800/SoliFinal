@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoliFinal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdminCrearUsuarioActivity"></activity>
+        <activity android:name=".ResumenActivity"></activity>
+        <activity android:name=".AdminCrearUsuarioActivity" />
         <activity android:name=".InfografiaActivity" />
-        <activity android:name=".PantallaJugar" />
+        <activity android:name=".PantallaJugarActivity" />
         <activity android:name=".EscogerModulo" />
         <activity android:name=".MenuLoginActivity" />
         <activity android:name=".MensajeLoginActivity" />

@@ -3,6 +3,7 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText u, p;
     ProcesosDB _db;
+    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,31 @@ public class MainActivity extends AppCompatActivity {
         u = (EditText)findViewById(R.id.txtUser);
         p = (EditText)findViewById(R.id.txtPasss);
 
-        _db.CerrarSesion();
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.menumusic);
+        music.start();
+
+        ValidarSession();
+
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        music.start();
+    }
+
+    private void ValidarSession() {
+        CVID_Usuario user = _db.ObtenerUsuarioSession();
+        if (user != null){
+            startActivity(new Intent(getApplicationContext(),MenuLoginActivity.class));
+        }
     }
 
     public void IniciarSesion(View v){
         try {
+            click.start();
             String user = u.getText().toString();
             String pass = p.getText().toString();
 
@@ -62,8 +84,6 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Login Exitoso",Toast.LENGTH_LONG).show();
 
                             estudiante.setTipo(3);
-
-                            _db.AbrirSesion(Integer.parseInt(estudiante.getId()), estudiante.getTipo());
 
                             Intent i = new Intent(getApplicationContext(),MensajeLoginActivity.class);
 
@@ -90,21 +110,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     public void Registrarse(View v){
+        click.start();
         startActivity(new Intent(getApplicationContext(), RegistrarseActivity.class));
     }
 
     public void RecuperarContraseña(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), RecuperarContrasenaActivity.class));
     }
 
     public void Utp(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
     }
 }

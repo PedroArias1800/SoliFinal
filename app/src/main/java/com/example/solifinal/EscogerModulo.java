@@ -70,7 +70,7 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void empezar(View v){
-        i = new Intent(getApplicationContext(), PantallaJugar.class);
+        i = new Intent(getApplicationContext(), PantallaJugarActivity.class);
         i.putExtra("nivel", nivel);
         startActivity(i);
     }

@@ -3,6 +3,7 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -26,12 +27,26 @@ public class RegistrarseActivity extends AppCompatActivity {
     List<Facultad> _facultades;
     Spinner spnFacultades;
     EditText nombre,cedula,edad,correo,password;
+    MediaPlayer click, music;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
+
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.menumusic);
+        music.start();
+
         InicializarControles();
         LoadSpinner();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        music.start();
     }
 
     private void LoadSpinner() {
@@ -111,11 +126,13 @@ public class RegistrarseActivity extends AppCompatActivity {
     }
 
     public void Utp(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
