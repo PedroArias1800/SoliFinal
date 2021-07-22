@@ -1,6 +1,7 @@
 package com.example.solifinal.Services;
 
 import com.example.solifinal.Entidades.CVID_Estudiante;
+import com.example.solifinal.Entidades.CVID_Tabla;
 import com.example.solifinal.Entidades.Juego;
 import com.example.solifinal.Entidades.CVID_Preguntas;
 import com.example.solifinal.Entidades.Preguntas;
@@ -37,4 +38,7 @@ public interface ApiInterface {
 
     @GET("api.php?ep=preguntas")
     Call<List<Preguntas>> getPreguntas();
+
+    @GET("api.php?ep=posiciones")
+    Call<List<CVID_Tabla>> getAllTable();
 }

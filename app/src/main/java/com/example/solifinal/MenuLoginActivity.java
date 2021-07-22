@@ -122,18 +122,23 @@ public class MenuLoginActivity extends AppCompatActivity {
     }
 
     public void OpcionRanking(View view) {
+        startActivity(new Intent(getApplicationContext(), PantallaRankingActivity.class));
     }
 
     public void OpcionAcercaDe(View view) {
+        startActivity(new Intent(getApplicationContext(), AcercaDeActivity.class));
     }
 
     public void OpcionInfografia(View view) {
+        startActivity(new Intent(getApplicationContext(), InfografiaActivity.class));
     }
 
     public void OpcionAdPreguntas(View view) {
+        startActivity(new Intent(getApplicationContext(), MantDePreguntasActivity.class));
     }
 
     public void OpcionAdUsuarios(View view) {
+        startActivity(new Intent(getApplicationContext(), MantDeUsuariosActivity.class));
     }
 
     public void Utp(View view) {

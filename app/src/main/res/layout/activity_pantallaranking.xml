@@ -4,70 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PantallaRankingActivity"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SOLI - Software Life"
-            android:gravity="center"
-            android:textSize="40dp"
-            android:layout_marginBottom="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ranking"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textColor="@color/black"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Posición   -   Nombre   -   Correo   -   Puntaje Total"
-        android:textSize="18dp"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+    tools:context=".PantallaRankingActivity">
 
     <ListView
+        android:id="@+id/lstTabla"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lstRanking"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
-            android:id="@+id/imgUTP"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
-            android:id="@+id/imgUTPFISC"
-            android:layout_toRightOf="@id/imgUTP"
-            android:layout_marginLeft="215dp"/>
-
-    </RelativeLayout>
-
+        android:layout_height="match_parent"/>
 </LinearLayout>

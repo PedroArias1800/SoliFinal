@@ -3,42 +3,51 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.solifinal.BaseDeDatos.ProcesosDB;
-import com.example.solifinal.ListView.AdapterRankingPuntaje;
+import com.example.solifinal.ListView.TablaListViewAdapter;
+import com.example.solifinal.Entidades.CVID_Tabla;
+import com.example.solifinal.Services.ApiService;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PantallaRankingActivity extends AppCompatActivity {
 
-    ListView lstranking;
+    ListView lstTabla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantallaranking);
 
-        IniciarlizarControles();
+        InicializarControles();
+        LoadListView();
     }
 
-    public void IniciarlizarControles(){
+    private void LoadListView() {
+        Call<List<CVID_Tabla>> response = ApiService.getApiService().getAllTable();
+        response.enqueue(new Callback<List<CVID_Tabla>>() {
+            @Override
+            public void onResponse(Call<List<CVID_Tabla>> call, Response<List<CVID_Tabla>> response) {
+                if (response.isSuccessful()){
+                    List<CVID_Tabla> table = response.body();
+                    TablaListViewAdapter adapter = new TablaListViewAdapter(getApplicationContext(),table);
+                    lstTabla.setAdapter(adapter);
+                }
+            }
 
-        lstranking = (ListView)findViewById(R.id.lstRanking);
-        ProcesosDB Pdb = new ProcesosDB(getApplicationContext());
-        //AdapterRanking adapterRanking = new AdapterRanking(getApplicationContext(), Pdb.ObtenerRanking());//CREAR EL MOTEDO EN DB PROCESS
-        //lstranking.setAdapter(adapterRanking);
-        AdapterRankingPuntaje adapterRankingPuntaje = new AdapterRankingPuntaje(getApplicationContext(), Pdb.ObtenerRanking2());
-        lstranking.setAdapter(adapterRankingPuntaje);
+            @Override
+            public void onFailure(Call<List<CVID_Tabla>> call, Throwable t) {
 
-        lstranking.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-            //    String opcionSeleccionada =
-                       // ((CVID_Usuario) a.getItemAtPosition(position)).getFirstname();
-
-            //    Toast.makeText(P_Ranking.this,  (position+1)+" Posición del ranking: " + opcionSeleccionada, Toast.LENGTH_LONG).show();
             }
         });
     }
 
+    private void InicializarControles() {
+        lstTabla = (ListView)findViewById(R.id.lstTabla);
+    }
 }
