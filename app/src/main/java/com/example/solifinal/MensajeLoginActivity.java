@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -29,7 +30,6 @@ public class MensajeLoginActivity extends AppCompatActivity {
 
     Intent i;
     AnimationDrawable animationDrawable;
-    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +38,12 @@ public class MensajeLoginActivity extends AppCompatActivity {
         i = getIntent();
         Nombre = i.getStringExtra("Nombre");
         Tipo = i.getIntExtra("Tipaje",2);
+
+        imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        imgCargando.setBackgroundResource(R.drawable.cargando);
+
         animationDrawable = (AnimationDrawable)imgCargando.getBackground();
         animationDrawable.start();
-        animationDrawable.stop();
 
         InicializarControles();
 
@@ -57,22 +60,24 @@ public class MensajeLoginActivity extends AppCompatActivity {
         }
 
         txtNombre = (TextView)findViewById(R.id.txtNombreLogin);
-        txtNombre.setText(Tipaje+" "+Nombre);
+        txtNombre.setText(Tipaje+"\n"+Nombre);
 
         imgCargando = (ImageView)findViewById(R.id.imgCargando);
         imgCargando.setBackgroundResource(R.drawable.cargando);
-
-        /*handler.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
-            }
-        }, 4000);*/
 
     }
 
     public void Menu(View v){
         startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
+    }
+
+    public void Utp(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    public void UtpFisc(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        startActivity(i);
     }
 }

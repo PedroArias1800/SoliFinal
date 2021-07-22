@@ -22,11 +22,13 @@ import retrofit2.Response;
 
 public class PantallaJugar extends AppCompatActivity {
 
+    Intent i;
+
     /*
     Intent ip = getIntent();
     private int puntos = ip.getIntExtra("Puntaje",0);
      */
-    private int puntos = 0;
+    private int puntos = 0, nivel;
 
     private final int _juegoId = 3;
 
@@ -45,6 +47,8 @@ public class PantallaJugar extends AppCompatActivity {
         iniControles();
         ObtenerPreguntas();
         Timer();
+        i = getIntent();
+        nivel = i.getIntExtra("nivel", 1);
     }
 
     private void iniControles(){

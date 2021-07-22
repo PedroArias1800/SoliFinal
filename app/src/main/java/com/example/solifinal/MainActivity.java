@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         _db.CerrarSesion();
     }
 
-
-
     public void IniciarSesion(View v){
         try {
             String user = u.getText().toString();
@@ -63,19 +61,20 @@ public class MainActivity extends AppCompatActivity {
 
                             Toast.makeText(getApplicationContext(),"Login Exitoso",Toast.LENGTH_LONG).show();
 
-                                estudiante.setTipo(3);
+                            estudiante.setTipo(3);
 
+                            _db.AbrirSesion(Integer.parseInt(estudiante.getId()), estudiante.getTipo());
 
                             Intent i = new Intent(getApplicationContext(),MensajeLoginActivity.class);
 
                             i.putExtra("Nombre", estudiante.getNombre_completo());
                             i.putExtra("Tipaje", estudiante.getTipo());
-                            _db.AbrirSesion(Integer.parseInt(estudiante.getId()), estudiante.getTipo());
+
                             startActivity(i);
 
                         }
                     }else {
-                        int x = 1;
+                        Toast.makeText(getApplicationContext(),"Error Al Iniciar Sesión",Toast.LENGTH_LONG).show();
                     }
                 }
 

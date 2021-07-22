@@ -79,7 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Facil"
-            android:visibility="gone"
+            android:visibility="visible"
+            android:onClick="facil"
             />
 
         <Button
@@ -90,7 +91,7 @@
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:text="Medio"
-            android:visibility="gone"
+            android:onClick="medio"
             />
 
         <Button
@@ -99,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Dificil"
-            android:visibility="gone"
+            android:onClick="dificil"
             />
 
         <Button
@@ -110,6 +111,8 @@
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             android:text="Atrás"
+            android:visibility="gone"
+            android:onClick="atras"
             />
 
         <Button
@@ -118,6 +121,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Comenzar Prueba"
+            android:visibility="gone"
+            android:onClick="empezar"
             />
 
     </LinearLayout>
