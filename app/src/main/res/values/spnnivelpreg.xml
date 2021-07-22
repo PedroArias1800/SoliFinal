@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spnTipo">
+    <string-array name="spnNivel">
         <item>Fácil</item>
         <item>Medio</item>
         <item>Difícil</item>

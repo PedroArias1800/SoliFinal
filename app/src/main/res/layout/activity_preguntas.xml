@@ -133,8 +133,6 @@
             android:textSize="20dp"
             android:text="Cancelar"
             style="?attr/materialButtonOutlinedStyle"
-            app:cornerRadius="20dp"
-            app:strokeColor="#0026f0"
             android:textColor="#0026f0"
             android:backgroundTint="@color/white"/>
 
@@ -146,8 +144,6 @@
             android:text="Guardar"
             android:layout_marginLeft="30dp"
             style="?attr/materialButtonOutlinedStyle"
-            app:cornerRadius="20dp"
-            app:strokeColor="#0026f0"
             android:textColor="#0026f0"
             android:backgroundTint="@color/white"/>
 
