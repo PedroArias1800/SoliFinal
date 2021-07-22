@@ -11,6 +11,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.solifinal.Dialogs.Retroalimentacion;
+import com.example.solifinal.Entidades.Preguntas;
+import com.example.solifinal.Services.ApiService;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PantallaJugar extends AppCompatActivity {
 
@@ -19,6 +27,8 @@ public class PantallaJugar extends AppCompatActivity {
     private int puntos = ip.getIntExtra("Puntaje",0);
      */
     private int puntos = 0;
+
+    private final int _juegoId = 3;
 
     private TextView m,n,p,t; //Modulo, Nivel, Pregunta, Tiempo
     private Button r1,r2,r3,r4,s; //Respuestas 1-4, siguiente
@@ -33,6 +43,7 @@ public class PantallaJugar extends AppCompatActivity {
         setContentView(R.layout.activity_pantallajugar);
 
         iniControles();
+        ObtenerPreguntas();
         Timer();
     }
 
@@ -47,6 +58,29 @@ public class PantallaJugar extends AppCompatActivity {
         r3 = (Button)findViewById(R.id.res3);
         r4 = (Button)findViewById(R.id.res4);
         s = (Button)findViewById(R.id.sig);
+    }
+
+    private void ObtenerPreguntas() {
+        Call<List<Preguntas>> response = ApiService.getApiService().getPreguntas(_juegoId);
+        response.enqueue(new Callback<List<Preguntas>>() {
+            @Override
+            public void onResponse(Call<List<Preguntas>> call, Response<List<Preguntas>> response) {
+                if (response.isSuccessful()){
+                    _preguntas = response.body();
+                    if (_preguntas.size() > 0){
+
+                        nivel.setText(_preguntas.get(0).getNivel());
+                        _preguntaActual = _preguntas.get(0);
+                        RenderPrimeraPregunta();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Preguntas>> call, Throwable t) {
+                int x = 1;
+            }
+        });
     }
 
     public void DeactBotones(){ //Desactiva las respuestas y activa el boton para avanzar

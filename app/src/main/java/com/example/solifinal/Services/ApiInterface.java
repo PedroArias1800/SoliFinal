@@ -3,6 +3,7 @@ package com.example.solifinal.Services;
 import com.example.solifinal.Entidades.CVID_Estudiante;
 import com.example.solifinal.Entidades.Juego;
 import com.example.solifinal.Entidades.CVID_Preguntas;
+import com.example.solifinal.Entidades.Preguntas;
 import com.example.solifinal.Requests.PartidaRequest;
 import com.example.solifinal.Responses.Facultad;
 
@@ -31,6 +32,9 @@ public interface ApiInterface {
     @POST("api.php?ep=partidaSave")
     Call<Integer> postRegistrarPartida(@Body PartidaRequest partida);
 
+    /*@GET("api.php?ep=preguntas")
+    Call<List<CVID_Preguntas>> getPreguntas(@Query("j") int juego);*/
+
     @GET("api.php?ep=preguntas")
-    Call<List<CVID_Preguntas>> getPreguntas();
+    Call<List<Preguntas>> getPreguntas(@Query("j") int juego);
 }
