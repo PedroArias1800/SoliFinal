@@ -1,48 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MantDePreguntasActivity">
-
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="70dp"
-        android:layout_height="45dp"
-        android:background="@drawable/ic_launcher_background" />
+    tools:context=".MantDePreguntasActivity"
+    android:orientation="vertical"
+    android:background="@drawable/fondo1"
+    >
 
     <ImageView
-        android:id="@+id/logoSoLi"
-        android:layout_width="190dp"
-        android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_below="@id/btnBack"/>
-
-    <TextView
-        android:id="@+id/title"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="24dp"
-        android:textColor="@color/black"
-        android:text="MANTENIMIENTO DE PREGUNTAS"
-        android:layout_below="@id/logoSoLi"/>
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginBottom="20dp"/>
 
-    <GridView
-        android:id="@+id/gv"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mantenimiento De Preguntas"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:numColumns="2"
-        android:verticalSpacing="10dp"
-        android:background="#eeeeee"
-        android:layout_below="@id/title">
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
-    </GridView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear Pregunta"
+            android:textSize="20dp"
+            android:onClick="CrearPregunta"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar Pregunta"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#0026f0"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:letterSpacing="0.09"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"/>
 
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/buscarpreg"
+            android:layout_gravity="right"
+            android:layout_marginTop="-35dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/white"
+            android:onClick="BusquedaEspecificaDePregunta"/>
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnTipoPreg"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"/>
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnNivelPreg"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/lstEditarUsuario"
+            android:cacheColorHint="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_utp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_fisc"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
+
+    </LinearLayout>
+
+</LinearLayout>

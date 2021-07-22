@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -27,7 +28,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
     private int Tipo;
 
     Intent i;
-
+    AnimationDrawable animationDrawable;
     Handler handler;
 
     @Override
@@ -37,6 +38,10 @@ public class MensajeLoginActivity extends AppCompatActivity {
         i = getIntent();
         Nombre = i.getStringExtra("Nombre");
         Tipo = i.getIntExtra("Tipaje",2);
+        animationDrawable = (AnimationDrawable)imgCargando.getBackground();
+        animationDrawable.start();
+        animationDrawable.stop();
+
         InicializarControles();
 
     }
