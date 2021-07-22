@@ -58,14 +58,23 @@
             android:text="Módulo X"/>
 
         <TextView
+            android:id="@+id/TIPO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:hint="Tipo"/>
+
+        <TextView
             android:id="@+id/niv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textAllCaps="true"
-            android:text="Nivel X"/>
+            android:textAllCaps="true"/>
 
         <TextView
             android:id="@+id/pre"
@@ -75,6 +84,8 @@
             android:textSize="40sp"
             android:textColor="@color/black"
             android:text="¿Pregunta?"/>
+
+        <!--
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -151,7 +162,13 @@
                 android:text="Siguiente Pregunta"
                 android:onClick="SigPreg"/>
 
-        </RelativeLayout>
+        </RelativeLayout> -->
+
+        <LinearLayout
+            android:id="@+id/renderRespuestas"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

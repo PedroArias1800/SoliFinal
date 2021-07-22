@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.solifinal.Entidades.CVID_Puntaje;
 import com.example.solifinal.Entidades.CVID_Usuario;
+import com.example.solifinal.Entidades.Partida;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,29 @@ public class ProcesosDB{
 
     public ProcesosDB(Context context) {
         hacerProcesos = new HacerProcesos(context, "juegos", null, 1);
+    }
+
+    public long InsentarRespuestaPartida(Partida partida, int numPartida){
+        try{
+            SQLiteDatabase db = hacerProcesos.getWritableDatabase();
+            if (db != null){
+                ContentValues values = new ContentValues();
+                values.put("partida",numPartida);
+                values.put("jugador",partida.getJugador());
+                values.put("juego",partida.getJuego());
+                values.put("nivel",partida.getNivel());
+                values.put("pregunta",partida.getPregunta());
+                values.put("respuestas",partida.getRespuestas());
+                values.put("puntaje",partida.getPuntaje());
+                values.put("fecha",partida.getFecha());
+                values.put("hora",partida.getHora());
+
+                return db.insert("partida",null,values);
+            }
+        }catch (Exception e){
+            int x = 1;
+        }
+        return 0;
     }
 /*
     public List<CVID_Usuario> ObtenerRanking() {
@@ -110,6 +134,27 @@ public class ProcesosDB{
         catch (Exception c){
             return  null;}
         return null;
+    }
+
+    public int ObtenerSiguientePartida(){
+        int partida = 1;
+        try{
+            SQLiteDatabase db = hacerProcesos.getReadableDatabase();
+            if (db != null){
+                String[] campo = {"partida"};
+
+                Cursor cursor = db.query("partida",campo,"juego='SoLi - Software Life'",null,"partida",null,"partida DESC","1");
+                cursor.moveToFirst();
+                do {
+                    partida = cursor.getInt(0) + 1;
+                }while(cursor.moveToNext());
+
+                return partida;
+            }
+        }catch (Exception e){
+            int x = 1;
+        }
+        return partida;
     }
 
     public void AbrirSesion(int x, int y){
