@@ -40,5 +40,5 @@ public interface ApiInterface {
     Call<List<Preguntas>> getPreguntas();
 
     @GET("api.php?ep=posiciones")
-    Call<List<CVID_Tabla>> getAllTable();
+    Call<List<CVID_Tabla>> getAllTable(@Query("t") int n);
 }

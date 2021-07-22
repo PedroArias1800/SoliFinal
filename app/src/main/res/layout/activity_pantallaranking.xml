@@ -1,13 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo1"
     tools:context=".PantallaRankingActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soli - Software Life"
+            android:textSize="35dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciclo De Vida Del Software"
+            android:textSize="28dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ranking"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Local"
+            android:onClick="Local"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="General"
+            android:onClick="General"
+            android:layout_marginLeft="15dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lstTabla"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="250dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_utp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
+
+    </LinearLayout>
 </LinearLayout>

@@ -18,14 +18,23 @@ import java.util.List;
 public class TablaListViewAdapter extends ArrayAdapter<CVID_Tabla> {
     List<CVID_Tabla> tabla = new ArrayList<>();
 
+    //static int y=0;
+    //int x=0;
+
     public TablaListViewAdapter(Context context, List<CVID_Tabla> datos){
         super(context, R.layout.listview_pranking,datos);
         tabla = datos;
+        //y=0;
     }
 
     public View getView(int position, View v, ViewGroup vg){
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.listview_pranking, null);
+/*
+        y=y+1;
+
+        TextView pos = (TextView) item.findViewById(R.id.txtPosicion);
+        pos.setText("Posición: " + x);*/
 
         TextView juego = (TextView)item.findViewById(R.id.lslblJuego);
         juego.setText("Juego: " + tabla.get(position).getJuego());

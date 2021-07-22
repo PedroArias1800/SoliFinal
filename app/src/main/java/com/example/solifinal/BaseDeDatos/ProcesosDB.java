@@ -68,7 +68,7 @@ public class ProcesosDB{
         } catch (Exception e) {}
         return null;
 
-    }*/
+    }
 
     public List<CVID_Puntaje> ObtenerRanking2() {
         try {
@@ -77,7 +77,7 @@ public class ProcesosDB{
                 String[] campos = new String[]{"experienciaAvance"};//1. CREO UN ARRREGLO PARA CONSULTAR LOS CAMPOS EN LA BD//
                 List<CVID_Puntaje> P = new ArrayList<>();
 
-                Cursor cursor = db.query("cvid_puntaje", campos, null, null, null, null, null); //2. CREAR UN CURSOR Y PASO NOMBRE DE LA TABLA Y CAMPOS A CONSULTAR DE ESA TABLA
+                Cursor cursor = db.query("puntaje", campos, null, null, null, null, null); //2. CREAR UN CURSOR Y PASO NOMBRE DE LA TABLA Y CAMPOS A CONSULTAR DE ESA TABLA
                 if (cursor.moveToFirst()) {// VERIFICA SI EL CURSOR TIENE DATOS PARA MOVERSE Y LO MUEVE A LA PRIMERA POSICION PARA SABER SI TIENE DATOS//
                     do {//PARA VERIFIACR QUE EXISTA ALGO POR LO MENOS EN LA PRIMERA POSICION
                         CVID_Puntaje pun = new CVID_Puntaje(// JALAR LOS DATOS DE CADA FILA
@@ -93,7 +93,7 @@ public class ProcesosDB{
         } catch (Exception e) {}
         return null;
 
-    }
+    }*/
 
     public Boolean GuardarSessionUsuario(CVID_Usuario usuario){
         try{
@@ -164,7 +164,7 @@ public class ProcesosDB{
                 ContentValues values = new ContentValues();
                 values.put("id", x);
                 values.put("tipo", y);
-                db.insert("cvid_sesion", null, values);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
+                db.insert("session", null, values);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
                 db.close();
             }
         } catch (Exception e) {
@@ -175,7 +175,7 @@ public class ProcesosDB{
         try {
             SQLiteDatabase db = hacerProcesos.getWritableDatabase();// PRIMER PASO ABRIR LA BASE DE DATOS PARA ESCRITURA//
             if (db != null) {
-                db.delete("cvid_sesion", "id", null);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
+                db.delete("session", "id", null);// NOMBRE DE LA TABLA , NULL, VALORES DE INSERTAR(REGISTROS CONTENT VALUES)//
                 return true;
             }
         } catch (Exception e) {

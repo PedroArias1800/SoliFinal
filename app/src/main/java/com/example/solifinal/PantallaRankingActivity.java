@@ -3,6 +3,7 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.solifinal.ListView.TablaListViewAdapter;
@@ -18,6 +19,7 @@ import retrofit2.Response;
 public class PantallaRankingActivity extends AppCompatActivity {
 
     ListView lstTabla;
+    int tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,11 @@ public class PantallaRankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pantallaranking);
 
         InicializarControles();
-        LoadListView();
+        LoadListView(0);
     }
 
-    private void LoadListView() {
-        Call<List<CVID_Tabla>> response = ApiService.getApiService().getAllTable();
+    private void LoadListView(int n) {
+        Call<List<CVID_Tabla>> response = ApiService.getApiService().getAllTable(n);
         response.enqueue(new Callback<List<CVID_Tabla>>() {
             @Override
             public void onResponse(Call<List<CVID_Tabla>> call, Response<List<CVID_Tabla>> response) {
@@ -49,5 +51,15 @@ public class PantallaRankingActivity extends AppCompatActivity {
 
     private void InicializarControles() {
         lstTabla = (ListView)findViewById(R.id.lstTabla);
+    }
+
+    public void General(View v){
+        tipo=1;
+        LoadListView(tipo);
+    }
+
+    public void Local(View v){
+        tipo=0;
+        LoadListView(tipo);
     }
 }

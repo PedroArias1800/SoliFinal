@@ -1,65 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp">
 
         <TextView
-            android:id="@+id/lslblPartida"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtPosicion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:text="1"/>
+            android:text="Posición: "
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lslblJugador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:maxLines="20"
+                    android:layout_weight="1"
+                    android:ellipsize="none"
+                    android:padding="10dp"
+                    android:scrollHorizontally="false"
+                    android:text="Jugador"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/lslblPuntaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:text="Puntaje"
+                    android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lslblJuego"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:maxLines="20"
+                    android:layout_weight="1"
+                    android:ellipsize="none"
+                    android:padding="10dp"
+                    android:scrollHorizontally="false"
+                    android:text="Juego"
+                    android:textColor="@color/black"/>
 
 
-        <TextView
-            android:id="@+id/lslblJuego"
-            android:layout_toRightOf="@id/lslblPartida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:maxLines="20"
-            android:layout_weight="1"
-            android:ellipsize="none"
-            android:padding="10dp"
-            android:scrollHorizontally="false"
-            android:text="Juego"/>
+                <TextView
+                    android:id="@+id/lslblNivel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:text="Nivel"
+                    android:textColor="@color/black"/>
 
-        <TextView
-            android:id="@+id/lslblJugador"
-            android:layout_below="@id/lslblPartida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:text="Jugador"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/lslblNivel"
-            android:layout_below="@id/lslblJuego"
-            android:layout_toRightOf="@id/lslblJugador"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:text="Nivel"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/lslblFecha"
-            android:layout_below="@id/lslblJugador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:text="Fecha"/>
+                <TextView
+                    android:id="@+id/lslblPartida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:maxLines="20"
+                    android:layout_weight="1"
+                    android:ellipsize="none"
+                    android:padding="10dp"
+                    android:scrollHorizontally="false"
+                    android:text="1"
+                    android:textColor="@color/black"/>
 
-        <TextView
-            android:id="@+id/lslblPuntaje"
-            android:layout_toRightOf="@id/lslblFecha"
-            android:layout_below="@id/lslblNivel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:text="Puntaje"/>
-</RelativeLayout>
+
+                <TextView
+                    android:id="@+id/lslblFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:text="Fecha"
+                    android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+</LinearLayout>
