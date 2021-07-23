@@ -191,7 +191,10 @@ public class PantallaJugarActivity extends AppCompatActivity {
         Button falso = new Button(getApplicationContext());
 
         verdadero.setLayoutParams(params);
+        verdadero.setTextSize(15);
+
         falso.setLayoutParams(params);
+        falso.setTextSize(15);
 
         verdadero.setText("VERDADERO");
         falso.setText("FALSO");
