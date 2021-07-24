@@ -67,7 +67,8 @@
         android:orientation="vertical"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp">
 
         <Button
             android:layout_width="match_parent"
@@ -168,7 +169,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="10dp">
 
         <TextView
@@ -193,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="     Cancelar"
+                android:textSize="15dp"
                 android:onClick="BotonCancelar"
                 android:visibility="gone"
                 style="?attr/materialButtonOutlinedStyle"
@@ -207,8 +209,9 @@
                 android:id="@+id/btnSalir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="     Cerrar Sesión"
-                android:layout_marginLeft="50dp"
+                android:text="    Cerrar Sesión"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"
                 android:onClick="CerrarSesion"
                 android:visibility="gone"
                 style="?attr/materialButtonOutlinedStyle"
@@ -242,7 +245,7 @@
                 android:src="@drawable/salirwh"
                 android:id="@+id/imgSalirwh"
                 android:visibility="gone"
-                android:layout_marginLeft="155dp"/>
+                android:layout_marginLeft="135dp"/>
 
         </LinearLayout>
 

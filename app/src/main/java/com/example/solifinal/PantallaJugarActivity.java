@@ -211,6 +211,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
                     respuestas = "1";
                     Toast.makeText(getApplicationContext(),"CORRECTOOOOOOO", Toast.LENGTH_LONG).show();
                 }else{
+
                     Toast.makeText(getApplicationContext(),"INCORRECTOOOOOOO", Toast.LENGTH_LONG).show();
                     respuestas = "0";
                 }

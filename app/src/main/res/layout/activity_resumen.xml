@@ -92,7 +92,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Regresar al menu de juegos"
-        android:onClick="RegresarJuegos"/>
+        android:onClick="RegresarJuegos"
+        style="?attr/materialButtonOutlinedStyle"
+        app:cornerRadius="20dp"
+        app:strokeColor="#0026f0"
+        android:textColor="#0026f0"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
 
     <ListView
         android:id="@+id/lstResumen"

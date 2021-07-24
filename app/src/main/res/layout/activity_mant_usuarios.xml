@@ -35,7 +35,12 @@
             android:layout_height="wrap_content"
             android:text="Crear Usuarios"
             android:textSize="20dp"
-            android:onClick="CrearUsuario"/>
+            android:onClick="CrearUsuario"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
 
         <TextView
             android:layout_width="match_parent"

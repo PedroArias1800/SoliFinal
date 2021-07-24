@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.example.solifinal.Entidades.CVID_Estudiante;
@@ -28,6 +29,9 @@ public class RegistrarseActivity extends AppCompatActivity {
     Spinner spnFacultades;
     EditText nombre,cedula,edad,correo,password;
     MediaPlayer click, music;
+    Intent i;
+    int x;
+    RadioGroup rg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,9 @@ public class RegistrarseActivity extends AppCompatActivity {
 
         music = MediaPlayer.create(this, R.raw.menumusic);
         music.start();
+
+        i = getIntent();
+        x= i.getIntExtra("num",0);
 
         InicializarControles();
         LoadSpinner();
@@ -83,6 +90,12 @@ public class RegistrarseActivity extends AppCompatActivity {
         edad = (EditText)findViewById(R.id.txtEdad);
         correo = (EditText)findViewById(R.id.TextInputEmail);
         password = (EditText)findViewById(R.id.TextInputpassword);
+        rg = (RadioGroup)findViewById(R.id.rgbTipoUsuarioReg);
+
+
+        if(x==1){
+            rg.setVisibility(View.GONE);
+        }
     }
 
     public void RegistrarEstudiante(View v){

@@ -81,9 +81,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textSize="18dp"
             android:text="Facil"
             android:visibility="visible"
             android:onClick="facil"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -93,8 +99,14 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
+            android:textSize="18dp"
             android:text="Medio"
             android:onClick="medio"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -104,6 +116,12 @@
             android:layout_gravity="center"
             android:text="Dificil"
             android:onClick="dificil"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -116,6 +134,12 @@
             android:text="Atrás"
             android:visibility="gone"
             android:onClick="atras"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -126,6 +150,12 @@
             android:text="Comenzar Prueba"
             android:visibility="gone"
             android:onClick="empezar"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
     </LinearLayout>

@@ -20,6 +20,7 @@ public class MantDeUsuariosActivity extends AppCompatActivity{
 
     public void CrearUsuario(View view) {
         Intent i = new Intent(this, AdminCrearUsuarioActivity.class);
+        i.putExtra("num", 2);
         startActivity(i);
     }
 

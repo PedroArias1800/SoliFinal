@@ -149,6 +149,32 @@
 
     </LinearLayout>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:id="@+id/rgbTipoUsuarioReg">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estudiante"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Docente"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Administrador"/>
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/btn_crear"
         android:layout_width="match_parent"

@@ -114,7 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void Registrarse(View v){
         click.start();
-        startActivity(new Intent(getApplicationContext(), RegistrarseActivity.class));
+        Intent i = new Intent(getApplicationContext(), RegistrarseActivity.class);
+        i.putExtra("num", 1);
+        startActivity(i);
     }
 
     public void RecuperarContraseña(View view) {
