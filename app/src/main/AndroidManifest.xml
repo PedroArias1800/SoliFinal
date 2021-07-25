@@ -12,7 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoliFinal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ResumenActivity"></activity>
+        <activity android:name=".splash_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ResumenActivity" />
         <activity android:name=".AdminCrearUsuarioActivity" />
         <activity android:name=".InfografiaActivity" />
         <activity android:name=".PantallaJugarActivity" />
@@ -28,11 +35,7 @@
         <activity android:name=".MantDeUsuariosActivity" />
         <activity android:name=".PreguntasActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
