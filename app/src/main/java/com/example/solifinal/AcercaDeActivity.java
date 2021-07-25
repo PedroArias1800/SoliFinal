@@ -44,17 +44,17 @@ public class AcercaDeActivity extends AppCompatActivity {
     }
 
     public void btnYT(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/"));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/user/UTPPanama"));
         startActivity(i);
     }
 
     public void btnFB(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/paginautp"));
         startActivity(i);
     }
 
     public void btnIG(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/"));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/utppanama/"));
         startActivity(i);
     }
 
