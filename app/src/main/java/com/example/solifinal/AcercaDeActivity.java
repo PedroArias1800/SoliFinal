@@ -21,7 +21,7 @@ public class AcercaDeActivity extends AppCompatActivity {
     {
         new AlertDialog.Builder(this)
                 .setTitle("Información de SOLI")
-                .setMessage("El videojuego SOLI es un juego interactivo que tiene como objetivo ilustrar a las personas de diferentes ámbitos (educativo, administrativo, empresas y otras entidades) sobre el aprendizaje de un modelo de ciclo de vida donde se debe tener en cuenta, la importancia de sus etapas y roles necesarios para tener éxito.")
+                .setMessage("El videojuego SOLI es un juego interactivo que tiene como objetivo ilustrar a los estudiantes universitarios sobre el aprendizaje de un modelo de ciclo de vida donde se debe tener en cuenta, la importancia de sus etapas y roles necesarios para tener éxito.")
                 .setPositiveButton(android.R.string.ok,null)
                 .show();
     }
