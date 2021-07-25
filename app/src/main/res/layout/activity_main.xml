@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿OLVIDASTES TU COMTRASEÑA?"
+            android:text="¿OLVIDASTES TU CONTRASEÑA?"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:textColor="#062132"
