@@ -87,4 +87,10 @@ public class PantallaRankingActivity extends AppCompatActivity {
         tipo=0;
         LoadListView(tipo);
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
+    }
 }

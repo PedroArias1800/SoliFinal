@@ -90,4 +90,10 @@ public class MensajeLoginActivity extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
+    }
 }
