@@ -110,8 +110,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
-
     public void Registrarse(View v){
         click.start();
         Intent i = new Intent(getApplicationContext(), RegistrarseActivity.class);

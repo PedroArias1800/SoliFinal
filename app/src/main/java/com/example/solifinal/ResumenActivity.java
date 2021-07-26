@@ -3,6 +3,8 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -28,6 +30,8 @@ public class ResumenActivity extends AppCompatActivity {
 
     List<Partida> _partidas = new ArrayList<>();
 
+    MediaPlayer click, music;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,11 @@ public class ResumenActivity extends AppCompatActivity {
         LoadListView(partida);
         MapearCampos();
         GuardarPartidaApi(_partidas);
+
+        click = MediaPlayer.create(this, R.raw.click);
+/*
+        music = MediaPlayer.create(this, R.raw.felici);
+        music.start();*/
     }
 
     private void GuardarPartidaApi(List<Partida> partidas) {
@@ -116,5 +125,23 @@ public class ResumenActivity extends AppCompatActivity {
         fecha = (TextView)findViewById(R.id.txtFecha);
         puntaje = (TextView)findViewById(R.id.txtPuntos);
         partida = (TextView)findViewById(R.id.txtPartida);
+    }
+
+    public void Utp(View view) {
+        click.start();
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    public void UtpFisc(View view) {
+        click.start();
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
     }
 }

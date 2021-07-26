@@ -56,7 +56,7 @@
         android:layout_gravity="center"/>
 
     <TextView
-        
+        android:id="@+id/Introducción"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Logra poner en práctica todos tus conocimientos acerca del ciclo de vida de software general que se utilizan para el desarrollo de proyectos en la actualidad."

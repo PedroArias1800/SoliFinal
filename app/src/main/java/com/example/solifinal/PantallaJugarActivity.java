@@ -2,6 +2,7 @@ package com.example.solifinal;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -51,6 +52,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
     private long t_res; //Tiempo restante en milisegundos
     private boolean run; //Verificando que el tiempo este corriendo
     private int sec;
+    MediaPlayer click, music;
 
     List<String> _selectedCheckboxs = new ArrayList<>();
 
@@ -61,8 +63,18 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
         _db = new ProcesosDB(getApplicationContext());
 
+        click = MediaPlayer.create(this, R.raw.click);
+
         Intent i = getIntent();
         _nivel = i.getIntExtra("nivel",1);
+        if(_nivel==1){
+            music = MediaPlayer.create(this, R.raw.facil);
+        } else if(_nivel==2){
+            music = MediaPlayer.create(this, R.raw.medio);
+        } else {
+            music = MediaPlayer.create(this, R.raw.dificil);
+        }
+
         _juego="SoLi - Software Life";
         _numPartida = _db.ObtenerSiguientePartida(_juego);
         t = (TextView)findViewById(R.id.time);
@@ -164,6 +176,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         }
 
         lnRender.addView(group);
+        music.start();
 
         Button validar = new Button(getApplicationContext());
         validar.setLayoutParams(params);
@@ -200,6 +213,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
         Button verdadero = new Button(getApplicationContext());
         Button falso = new Button(getApplicationContext());
+        music.start();
 
         verdadero.setLayoutParams(params);
         verdadero.setTextSize(15);
@@ -286,6 +300,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
             lnRender.addView(newCheck);
         }
+        music.start();
 
         Button validar = new Button(getApplicationContext());
         validar.setLayoutParams(params);
@@ -398,4 +413,9 @@ public class PantallaJugarActivity extends AppCompatActivity {
         t.setText(tiempo);
     }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
+    }
 }
