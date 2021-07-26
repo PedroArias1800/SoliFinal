@@ -93,7 +93,7 @@
                 android:text="--s"/>
 
             <TextView
-                android:text="\n\n\n\n\n\n\nCargando..."
+                android:text="Cargando..."
                 android:id="@+id/lblPregunta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,6 +102,15 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:gravity="center"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgCargando"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                />
 
         </LinearLayout>
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -41,6 +42,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
     LinearLayout lnRender;
     TextView nivel,tipo,pregunta;
+    ImageView imgCargando;
 
     ProcesosDB _db;
     int _numPartida = 0;
@@ -119,6 +121,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         nivel = (TextView)findViewById(R.id.lblNivel);
         tipo = (TextView)findViewById(R.id.lblTipoPregunta);
         pregunta = (TextView)findViewById(R.id.lblPregunta);
+        imgCargando = (ImageView)findViewById(R.id.imgCargando);
     }
 
     private void RenderPrimeraPregunta(){
@@ -175,6 +178,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
             group.addView(newCheck);
         }
 
+        imgCargando.setVisibility(View.GONE);
         lnRender.addView(group);
         music.start();
 
@@ -211,6 +215,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         LinearLayout.LayoutParams params =
                 new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
+        imgCargando.setVisibility(View.GONE);
         Button verdadero = new Button(getApplicationContext());
         Button falso = new Button(getApplicationContext());
         music.start();
@@ -298,6 +303,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
                 }
             });
 
+            imgCargando.setVisibility(View.GONE);
             lnRender.addView(newCheck);
         }
         music.start();

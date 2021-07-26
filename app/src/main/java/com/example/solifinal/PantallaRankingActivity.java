@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +28,7 @@ public class PantallaRankingActivity extends AppCompatActivity {
 
     ImageView imgCargando;
     AnimationDrawable animationDrawable;
+    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,11 @@ public class PantallaRankingActivity extends AppCompatActivity {
 
         animationDrawable = (AnimationDrawable)imgCargando.getBackground();
         animationDrawable.start();
+
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.born);
+        music.start();
 
         InicializarControles();
         LoadListView(0);
@@ -70,11 +77,13 @@ public class PantallaRankingActivity extends AppCompatActivity {
     }
 
     public void General(View v){
+        click.start();
         tipo=1;
         LoadListView(tipo);
     }
 
     public void Local(View v){
+        click.start();
         tipo=0;
         LoadListView(tipo);
     }

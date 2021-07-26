@@ -45,9 +45,9 @@ public class ResumenActivity extends AppCompatActivity {
         GuardarPartidaApi(_partidas);
 
         click = MediaPlayer.create(this, R.raw.click);
-/*
-        music = MediaPlayer.create(this, R.raw.felici);
-        music.start();*/
+
+        music = MediaPlayer.create(this, R.raw.resum);
+        music.start();
     }
 
     private void GuardarPartidaApi(List<Partida> partidas) {
@@ -84,6 +84,7 @@ public class ResumenActivity extends AppCompatActivity {
     }
 
     public void RegresarJuegos(View v){
+        click.start();
         startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
     }
 

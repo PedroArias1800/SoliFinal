@@ -3,6 +3,7 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -16,12 +17,18 @@ public class EscogerModulo extends AppCompatActivity {
     Intent i;
     TextView introduccion;
 
+    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escoger_modulo);
         InicializarControles();
+
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.resum);
+        music.start();
     }
 
     public void InicializarControles(){
@@ -35,6 +42,7 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void facil(View v){
+        click.start();
         facil.setVisibility(View.GONE);
         medio.setVisibility(View.GONE);
         dificil.setVisibility(View.GONE);
@@ -46,6 +54,7 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void medio(View v){
+        click.start();
         facil.setVisibility(View.GONE);
         medio.setVisibility(View.GONE);
         dificil.setVisibility(View.GONE);
@@ -57,6 +66,7 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void dificil(View v){
+        click.start();
         facil.setVisibility(View.GONE);
         medio.setVisibility(View.GONE);
         dificil.setVisibility(View.GONE);
@@ -68,6 +78,7 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void atras(View v){
+        click.start();
         facil.setVisibility(View.VISIBLE);
         medio.setVisibility(View.VISIBLE);
         dificil.setVisibility(View.VISIBLE);
@@ -77,17 +88,20 @@ public class EscogerModulo extends AppCompatActivity {
     }
 
     public void empezar(View v){
+        click.start();
         i = new Intent(getApplicationContext(), PantallaJugarActivity.class);
         i.putExtra("nivel", nivel);
         startActivity(i);
     }
 
     public void Utp(View view) {
+        click.start();
         i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
+        click.start();
         i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
