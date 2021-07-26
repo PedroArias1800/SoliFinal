@@ -1,7 +1,9 @@
 package com.example.solifinal;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -44,6 +46,12 @@ public class PantallaJugarActivity extends AppCompatActivity {
     String _jugador = "", _juego="";
     int _nivel;
 
+    TextView t;
+    private CountDownTimer cdt;
+    private long t_res; //Tiempo restante en milisegundos
+    private boolean run; //Verificando que el tiempo este corriendo
+    private int sec;
+
     List<String> _selectedCheckboxs = new ArrayList<>();
 
     @Override
@@ -57,6 +65,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         _nivel = i.getIntExtra("nivel",1);
         _juego="SoLi - Software Life";
         _numPartida = _db.ObtenerSiguientePartida(_juego);
+        t = (TextView)findViewById(R.id.time);
 
         ObtenerUsuarioSession();
 
@@ -164,11 +173,12 @@ public class PantallaJugarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int puntaje = 0;
+                Stop(); t.setText("");
                 RadioButton checkResponse = group.findViewById(group.getCheckedRadioButtonId());
                 String selectedResponse = checkResponse.getText().toString();
 
                 for (Respuestas res : pregunta.getRespuestas()){
-                    if (res.getRespuesta().equals(selectedResponse) && res.getCorrecta().equals("1")){
+                    if (res.getRespuesta().equals(selectedResponse) && res.getCorrecta().equals("1") && sec>0){
                         puntaje = Integer.parseInt(res.getPuntaje());
                     }
                 }
@@ -181,6 +191,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         });
 
         lnRender.addView(validar);
+        SetTimer();
     }
 
     private void RenderPreguntaVF(Preguntas pregunta) {
@@ -204,15 +215,16 @@ public class PantallaJugarActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int puntaje = 0;
+                Stop(); t.setText("");
                 String respuestas = "";
 
-                if (pregunta.getRespuestas().get(0).getRespuesta().equals("1")){
+                if (pregunta.getRespuestas().get(0).getRespuesta().equals("1") && sec>0){
                     puntaje = Integer.parseInt(pregunta.getRespuestas().get(0).getPuntaje());
                     respuestas = "1";
-                    Toast.makeText(getApplicationContext(),"CORRECTOOOOOOO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"CORRECTO", Toast.LENGTH_LONG).show();
                 }else{
 
-                    Toast.makeText(getApplicationContext(),"INCORRECTOOOOOOO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"INCORRECTO", Toast.LENGTH_LONG).show();
                     respuestas = "0";
                 }
                 GuardarRespuesta(pregunta,respuestas,puntaje);
@@ -227,15 +239,16 @@ public class PantallaJugarActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int puntaje = 0;
+                Stop(); t.setText("");
                 String respuestas = "";
 
-                if (pregunta.getRespuestas().get(0).getRespuesta().equals("0")){
+                if (pregunta.getRespuestas().get(0).getRespuesta().equals("0") && sec>0){
                     puntaje = Integer.parseInt(pregunta.getRespuestas().get(0).getPuntaje());
                     respuestas = "0";
-                    Toast.makeText(getApplicationContext(),"CORRECTOOOOOOO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"CORRECTO", Toast.LENGTH_LONG).show();
                 }else{
                     respuestas = "1";
-                    Toast.makeText(getApplicationContext(),"INCORRECTOOOOOOO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"INCORRECTO", Toast.LENGTH_LONG).show();
                 }
                 GuardarRespuesta(pregunta,respuestas,puntaje);
 
@@ -246,6 +259,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
         lnRender.addView(verdadero);
         lnRender.addView(falso);
+        SetTimer();
     }
 
     private void RenderPreguntaOpcionMultiple(Preguntas pregunta) {
@@ -261,6 +275,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
             newCheck.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Stop(); t.setText("");
                     if (newCheck.isChecked()){
                         _selectedCheckboxs.add(newCheck.getText().toString());
                     }else{
@@ -281,11 +296,12 @@ public class PantallaJugarActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int puntaje = 0;
+                Stop(); t.setText("");
                 String respuestas = "";
                 for (String res : _selectedCheckboxs){
                     respuestas = respuestas + "," + res;
                     for (Respuestas resp : pregunta.getRespuestas()){
-                        if (resp.getRespuesta().equals(res) && resp.getCorrecta().equals("1")){
+                        if (resp.getRespuesta().equals(res) && resp.getCorrecta().equals("1") && sec>0){
                             puntaje = puntaje + Integer.parseInt(resp.getPuntaje());
                         }
                     }
@@ -299,6 +315,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
         });
 
         lnRender.addView(validar);
+        SetTimer();
     }
 
     private void GuardarRespuesta(Preguntas pregunta, String respuestas, int puntaje){
@@ -323,4 +340,62 @@ public class PantallaJugarActivity extends AppCompatActivity {
             int x = 1;
         }
     }
+
+    private void SetTimer(){
+        if(_nivel==1){
+            t_res = 26000;
+        } else if(_nivel==2){
+            t_res = 21000;
+        } else{
+            t_res = 16000;
+        }
+        run = false;
+
+        Timer();
+    }
+    private void Timer(){ //Controla si el tiempo continua o se detiene
+        if(run){
+            Stop();
+        } else {
+            Start();
+        }
+    }
+    private void Start(){ //Inicia el tiempo
+        cdt = new CountDownTimer(t_res, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                t_res = millisUntilFinished;
+                ActTimer();
+            }
+
+            @Override
+            public void onFinish(){}
+        }.start();
+        run = true;
+    }
+    private void Stop(){ //Detiene el tiempo
+        cdt.cancel();
+        run = false;
+    }
+    private void ActTimer(){ //Muestra el tiempo actual en pantalla
+        sec = (int) t_res/1000;
+        String tiempo;
+        if(sec<10){
+            tiempo = "0" + sec;
+        } else {
+            tiempo = Integer.toString(sec);
+        }
+        tiempo+="s";
+
+        if(sec>10){
+            t.setTextColor(Color.parseColor("#00FF00"));
+        } else if(sec>0){
+            t.setTextColor(Color.parseColor("#FFFF00"));
+        } else{
+            t.setTextColor(Color.parseColor("#FF0000"));
+        }
+
+        t.setText(tiempo);
+    }
+
 }
