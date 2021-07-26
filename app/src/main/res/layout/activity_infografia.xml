@@ -47,31 +47,30 @@
 
     </GridLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="En esta sección encontrarás enlaces para aumentar tus conocimientos acerca de el ciclo de vida del software"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="En esta sección encontrarás enlaces para aumentar tus conocimientos acerca de el ciclo de vida del software"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:textColor="@color/black"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="vertical"
-                android:orientation="vertical"
-                android:layout_marginTop="15dp">
+                android:orientation="vertical">
 
                 <Button
                     android:layout_width="match_parent"
@@ -128,17 +127,6 @@
                     android:textColor="#0026f0"
                     android:backgroundTint="@color/white"/>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Link 6"
-                    android:onClick="link6"
-                    style="?attr/materialButtonOutlinedStyle"
-                    app:cornerRadius="20dp"
-                    app:strokeColor="#0026f0"
-                    android:textColor="#0026f0"
-                    android:backgroundTint="@color/white"/>
-
             </LinearLayout>
 
     </LinearLayout>
@@ -147,12 +135,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:scaleType="fitCenter"
             android:src="@drawable/logo_utp"
             android:layout_marginRight="40dp"
             android:background="@drawable/rounded_item"
@@ -160,8 +149,9 @@
             android:onClick="Utp"/>
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:scaleType="fitCenter"
             android:src="@drawable/logo_fisc"
             android:background="@drawable/rounded_item"
             android:backgroundTint="@color/white"
