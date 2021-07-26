@@ -69,13 +69,6 @@
             android:id="@+id/txtNombreLogin"
             android:gravity="center"/>
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:id="@+id/imgCargando"
-            android:layout_gravity="right"
-            android:layout_marginRight="16dp"/>
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,6 +82,14 @@
             app:strokeColor="#0026f0"
             android:textColor="#0026f0"
             android:backgroundTint="@color/white"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/imgCargando"
+            android:layout_gravity="right"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="-52.5dp"/>
 
     </LinearLayout>
 

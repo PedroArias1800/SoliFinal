@@ -10,12 +10,17 @@
     >
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:padding="5dp"
         android:src="@drawable/logo_soli_claro"
         android:scaleType="fitCenter"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/white"
+        android:background="@drawable/rounded_item"
+        android:backgroundTint="#062132"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -44,13 +49,14 @@
     </GridLayout>
 
     <ImageView
-        android:layout_width="285dp"
-        android:layout_height="175dp"
+        android:layout_width="325dp"
+        android:layout_height="210dp"
         android:src="@drawable/modelos"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"/>
 
     <TextView
+        
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Logra poner en práctica todos tus conocimientos acerca del ciclo de vida de software general que se utilizan para el desarrollo de proyectos en la actualidad."

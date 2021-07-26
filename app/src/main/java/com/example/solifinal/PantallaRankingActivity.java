@@ -2,9 +2,13 @@ package com.example.solifinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.solifinal.ListView.TablaListViewAdapter;
 import com.example.solifinal.Entidades.CVID_Tabla;
@@ -21,10 +25,20 @@ public class PantallaRankingActivity extends AppCompatActivity {
     ListView lstTabla;
     int tipo;
 
+    ImageView imgCargando;
+    AnimationDrawable animationDrawable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantallaranking);
+
+        imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        imgCargando.setBackgroundResource(R.drawable.cargando);
+        imgCargando.setVisibility(View.VISIBLE);
+
+        animationDrawable = (AnimationDrawable)imgCargando.getBackground();
+        animationDrawable.start();
 
         InicializarControles();
         LoadListView(0);
@@ -38,6 +52,8 @@ public class PantallaRankingActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     List<CVID_Tabla> table = response.body();
                     TablaListViewAdapter adapter = new TablaListViewAdapter(getApplicationContext(),table);
+                    imgCargando.setVisibility(View.GONE);
+                    lstTabla.setVisibility(View.VISIBLE);
                     lstTabla.setAdapter(adapter);
                 }
             }

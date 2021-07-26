@@ -27,7 +27,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="@color/white"
             android:background="@drawable/rounded_item"
-
             android:backgroundTint="#062132"
             />
 
