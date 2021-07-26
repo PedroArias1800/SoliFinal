@@ -28,7 +28,7 @@
             app:strokeColor="@color/white"
             android:background="@drawable/rounded_item"
 
-            android:backgroundTnt="#062132"
+            android:backgroundTint="#062132"
             />
 
         <LinearLayout
