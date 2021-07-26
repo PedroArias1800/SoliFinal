@@ -3,17 +3,15 @@ package com.example.solifinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.solifinal.BaseDeDatos.ProcesosDB;
-
-import org.w3c.dom.Text;
 
 public class MenuLoginActivity extends AppCompatActivity {
 
@@ -24,6 +22,7 @@ public class MenuLoginActivity extends AppCompatActivity {
 
     Intent i;
     ProcesosDB _db;
+    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +30,11 @@ public class MenuLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_login);
         //i.getIntent();
         IniciarlizarControles();
+
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.menumusic);
+        music.start();
     }
 
     public void IniciarlizarControles(){
@@ -89,12 +93,14 @@ public class MenuLoginActivity extends AppCompatActivity {
     }
 
     public void CerrarSesion(View v){
+        click.start();
         _db = new ProcesosDB(getApplicationContext());
         _db.CerrarSesion();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 
     public void BotonCancelar(View v){
+        click.start();
 
         if(Tipo==3){
             jugar.setVisibility(View.VISIBLE);
@@ -118,37 +124,51 @@ public class MenuLoginActivity extends AppCompatActivity {
     }
 
     public void OpcionJugar(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), EscogerModulo.class));
     }
 
     public void OpcionRanking(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), PantallaRankingActivity.class));
     }
 
     public void OpcionAcercaDe(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), AcercaDeActivity.class));
     }
 
     public void OpcionInfografia(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), InfografiaActivity.class));
     }
 
     public void OpcionAdPreguntas(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), MantDePreguntasActivity.class));
     }
 
     public void OpcionAdUsuarios(View view) {
+        click.start();
         startActivity(new Intent(getApplicationContext(), MantDeUsuariosActivity.class));
     }
 
     public void Utp(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
     }
 }
 

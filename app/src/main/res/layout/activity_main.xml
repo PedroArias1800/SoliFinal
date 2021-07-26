@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@drawable/fondo1"
     >
 
@@ -16,12 +16,18 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
         >
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="300dp"
             android:layout_height="150dp"
-            android:src="@drawable/icono"
+            android:src="@drawable/logo_soli_claro"
             android:layout_gravity="center"
+            android:padding="5dp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="#062132"
             />
 
         <LinearLayout
@@ -29,14 +35,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SOLI - Software Life"
-                android:textSize="20dp"
-                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -118,7 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿OLVIDASTES TU COMTRASEÑA?"
+            android:text="¿OLVIDASTES TU CONTRASEÑA?"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:textColor="#062132"
@@ -128,7 +129,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:gravity="center_horizontal">
 

@@ -10,29 +10,51 @@
     android:background="@drawable/fondo1">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="275dp"
+        android:layout_height="130dp"
+        android:padding="5dp"
+        android:src="@drawable/logo_soli_claro"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_launcher_background"/>
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/white"
+        android:background="@drawable/rounded_item"
+        android:backgroundTint="#062132"/>
 
-    <TextView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Acerca De"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:layout_marginBottom="10dp"
-        android:letterSpacing="0.1"/>
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciclo De Vida Del Software"
+            android:textSize="28dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acerca De"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"/>
+
+    </GridLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +81,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +106,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:text="Correo de contacto: soli.aprende@gmail.com"
         android:textSize="18dp"

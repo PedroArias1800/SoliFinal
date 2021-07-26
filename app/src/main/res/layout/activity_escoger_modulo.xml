@@ -10,25 +10,23 @@
     >
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_width="250dp"
+        android:layout_height="110dp"
+        android:padding="5dp"
+        android:src="@drawable/logo_soli_claro"
+        android:scaleType="fitCenter"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/white"
+        android:background="@drawable/rounded_item"
+        android:backgroundTint="#062132"/>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Soli - Software Life"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -51,36 +49,46 @@
     </GridLayout>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_width="325dp"
+        android:layout_height="210dp"
+        android:src="@drawable/modelos"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/Introducción"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Logra poner en práctica todos tus conocimientos acerca del ciclo de vida de software general que se utilizan para el desarrollo de proyectos en la actualidad."
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
         android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
 
         <Button
             android:id="@+id/P_btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textSize="18dp"
             android:text="Facil"
             android:visibility="visible"
             android:onClick="facil"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -90,8 +98,14 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
+            android:textSize="18dp"
             android:text="Medio"
             android:onClick="medio"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -101,6 +115,12 @@
             android:layout_gravity="center"
             android:text="Dificil"
             android:onClick="dificil"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -113,6 +133,12 @@
             android:text="Atrás"
             android:visibility="gone"
             android:onClick="atras"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
         <Button
@@ -123,6 +149,12 @@
             android:text="Comenzar Prueba"
             android:visibility="gone"
             android:onClick="empezar"
+            android:textSize="18dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
             />
 
     </LinearLayout>

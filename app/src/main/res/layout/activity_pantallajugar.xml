@@ -5,172 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PantallaJugar">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#8C001C">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="SOLI"/>
-
-        <ImageView
-            android:id="@+id/utp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_toStartOf="@+id/fisc"
-            android:scaleType="fitCenter"
-            android:padding="10dp"
-            android:src="@drawable/logo_utp"/>
-
-        <ImageView
-            android:id="@+id/fisc"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="fitCenter"
-            android:padding="10dp"
-            android:src="@drawable/logo_fisc"/>
-
-    </RelativeLayout>
+    tools:context=".PantallaJugarActivity"
+    android:background="@drawable/fondo1">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/mod"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_soli_claro"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="#062132"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:text="Módulo X"/>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SoLi - Software Life"
+                android:textSize="25dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio De La Prueba"
+                android:textSize="22dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/TIPO"
+            android:text=""
+            android:id="@+id/lblTipoPregunta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:hint="Tipo"/>
-
+            android:textSize="18dp"
+            />
         <TextView
-            android:id="@+id/niv"
+            android:id="@+id/lblNivel"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:layout_marginLeft="15dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textAllCaps="true"/>
+            android:textSize="18dp"/>
 
-        <TextView
-            android:id="@+id/pre"
-            android:layout_width="wrap_content"
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="30dp"
-            android:textSize="40sp"
-            android:textColor="@color/black"
-            android:text="¿Pregunta?"/>
-
-        <!--
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/res1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#8C001C"
-                android:layout_margin="5dp"
-                android:textSize="15sp"
-                android:text="Respuesta 1"
-                android:gravity="center"
-                android:onClick="Res1"/>
-
-            <Button
-                android:id="@+id/res2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/res1"
-                android:backgroundTint="#8C001C"
-                android:layout_margin="5dp"
-                android:textSize="15sp"
-                android:text="Respuesta 2"
-                android:gravity="center"
-                android:onClick="Res2"/>
-
-            <Button
-                android:id="@+id/res3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/res1"
-                android:backgroundTint="#8C001C"
-                android:layout_margin="5dp"
-                android:textSize="15sp"
-                android:text="Respuesta 3"
-                android:gravity="center"
-                android:onClick="Res3"/>
-
-            <Button
-                android:id="@+id/res4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/res3"
-                android:layout_below="@+id/res2"
-                android:backgroundTint="#8C001C"
-                android:layout_margin="5dp"
-                android:textSize="15sp"
-                android:text="Respuesta 4"
-                android:gravity="center"
-                android:onClick="Res4"/>
+            android:orientation="vertical"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/time"
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/res3"
-                android:layout_margin="10dp"
-                android:textSize="35sp"
-                android:background="@color/black"
-                android:text="00"/>
+                android:layout_marginRight="20dp"
+                android:layout_gravity="right"
+                android:textSize="40sp"
+                android:text="--s"/>
 
-            <Button
-                android:id="@+id/sig"
-                android:layout_width="225dp"
+            <TextView
+                android:text="Cargando..."
+                android:id="@+id/lblPregunta"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/time"
-                android:layout_below="@+id/res3"
-                android:backgroundTint="#8C001C"
-                android:layout_margin="10dp"
-                android:textSize="15sp"
-                android:enabled="false"
-                android:text="Siguiente Pregunta"
-                android:onClick="SigPreg"/>
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:gravity="center"/>
 
-        </RelativeLayout> -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgCargando"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/renderRespuestas"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
 
 </LinearLayout>

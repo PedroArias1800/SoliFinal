@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MantDeUsuariosActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo1">
 
     <ImageView
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="125dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/logo_soli_claro"
+        android:scaleType="fitCenter"
         android:layout_marginBottom="20dp"/>
 
     <TextView
@@ -35,7 +37,12 @@
             android:layout_height="wrap_content"
             android:text="Crear Usuarios"
             android:textSize="20dp"
-            android:onClick="CrearUsuario"/>
+            android:onClick="CrearUsuario"
+            style="?attr/materialButtonOutlinedStyle"
+            app:cornerRadius="20dp"
+            app:strokeColor="#0026f0"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -98,19 +105,17 @@
         android:layout_height="match_parent"
         android:layout_margin="15dp"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/logo_utp"/>
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/logo_fisc"
             android:layout_marginLeft="40dp"/>
 
     </LinearLayout>
