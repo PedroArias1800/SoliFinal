@@ -9,14 +9,50 @@
     android:background="@drawable/fondo1"
     tools:context=".ResumenActivity">
 
-    <TextView
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_soli_claro"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/white"
+        android:background="@drawable/rounded_item"
+        android:backgroundTint="#062132"
+        />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="Resumen de Partida"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciclo De Vida Del Software"
+            android:textColor="#062132"
+            android:textFontWeight="900"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            />
 
-    <RelativeLayout
-        android:id="@+id/rlTitulo"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resumen De La Partida"
+            android:textColor="#062132"
+            android:textFontWeight="900"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,6 +74,15 @@
             android:textSize="15dp"
             android:padding="10dp"
             android:text="Juego"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
         <TextView
             android:id="@+id/txtNivel"
             android:layout_toRightOf="@id/txtJuego"
@@ -46,6 +91,7 @@
             android:textSize="15dp"
             android:padding="10dp"
             android:text="Nivel"/>
+
         <TextView
             android:id="@+id/txtFecha"
             android:layout_toRightOf="@id/txtNivel"
@@ -64,14 +110,21 @@
             android:padding="10dp"
             android:text="Partida"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:text="Puntos Obtenidos:  "/>
 
         <TextView
             android:id="@+id/txtPuntos"
@@ -79,20 +132,31 @@
             android:layout_height="wrap_content"
             android:textSize="50dp"
             android:gravity="center"
-            android:text="00"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:gravity="center"
-            android:text="Puntos obtenidos"/>
+            android:text="¡ 00 !"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retroalimentación Del Intento"
+        android:layout_gravity="center"
+        android:textColor="#062132"
+        android:textFontWeight="900"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
+
+    <ListView
+        android:id="@+id/lstResumen"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scrollbars="vertical"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Regresar al menu de juegos"
+        android:text="Regresar al menú principal"
         android:onClick="RegresarJuegos"
         style="?attr/materialButtonOutlinedStyle"
         app:cornerRadius="20dp"
@@ -100,11 +164,32 @@
         android:textColor="#0026f0"
         android:backgroundTint="@color/white"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp" />
 
-    <ListView
-        android:id="@+id/lstResumen"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_utp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="Utp"/>
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo_fisc"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="@color/white"
+            android:onClick="UtpFisc"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -26,14 +26,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Soli - Software Life"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Ciclo De Vida Del Software"
             android:textSize="23dp"
             android:gravity="center"
