@@ -43,15 +43,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Editar Pregunta"
+            android:text="BUSCAR PREGUNTAS"
             android:textSize="20dp"
             android:layout_marginTop="20dp"
             android:background="#0026f0"
             android:textColor="@color/white"
             android:gravity="center"
             android:letterSpacing="0.09"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"/>
+            android:paddingVertical="5dp"/>
 
         <ImageButton
             android:layout_width="35dp"
@@ -61,7 +60,7 @@
             android:layout_marginTop="-35dp"
             android:layout_marginRight="5dp"
             android:backgroundTint="@color/white"
-            android:onClick="BusquedaEspecificaDePregunta"/>
+            android:onClick="ObtenerPreguntas"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,30 +70,46 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp">
 
-            <Spinner
-                android:layout_width="150dp"
+            <RadioGroup
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spnTipoPreg"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:id="@+id/rgNivelesPreg">
 
-            <Spinner
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/spnNivelPreg"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"/>
+                <RadioButton
+                    android:id="@+id/facil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Fácil"/>
+
+                <RadioButton
+                    android:id="@+id/medio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:textSize="20dp"
+                    android:text="Medio"/>
+
+                <RadioButton
+                    android:id="@+id/dificil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Difícil"/>
+
+            </RadioGroup>
 
         </LinearLayout>
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/lstEditarUsuario"
-            android:cacheColorHint="@color/black"/>
+            android:layout_height="225dp"
+            android:id="@+id/lstPreguntas"
+            android:cacheColorHint="@color/black"
+            android:background="#2A032F43"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

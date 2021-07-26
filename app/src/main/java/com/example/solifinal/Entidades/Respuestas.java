@@ -7,6 +7,7 @@ public class Respuestas {
       private String correcta;
       private String retroalimentacion;
       private String respuesta;
+      private int respuesta_id;
 
     public String getId() {
         return id;
@@ -54,5 +55,9 @@ public class Respuestas {
 
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public void setRespuesta_id(int respuesta_id) {
+        this.respuesta_id = respuesta_id;
     }
 }

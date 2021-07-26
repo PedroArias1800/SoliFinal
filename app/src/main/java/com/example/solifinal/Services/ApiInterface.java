@@ -5,6 +5,7 @@ import com.example.solifinal.Entidades.CVID_Tabla;
 import com.example.solifinal.Entidades.Juego;
 import com.example.solifinal.Entidades.CVID_Preguntas;
 import com.example.solifinal.Entidades.Preguntas;
+import com.example.solifinal.Entidades.Respuestas;
 import com.example.solifinal.Requests.PartidaRequest;
 import com.example.solifinal.Responses.Facultad;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -37,8 +39,17 @@ public interface ApiInterface {
     Call<List<CVID_Preguntas>> getPreguntas(@Query("j") int juego);*/
 
     @GET("api.php?ep=preguntas")
-    Call<List<Preguntas>> getPreguntas();
+    Call<List<Preguntas>> getPreguntas(@Query("nid") int nid);
 
     @GET("api.php?ep=posiciones")
     Call<List<CVID_Tabla>> getAllTable(@Query("t") int n);
+
+    @POST("api.php?ep=preguntaSave")
+    Call<Integer> postRegistrarPregunta(@Body Preguntas preguntas);
+
+    @GET("api.php?ep=preguntasID")
+    Call<List<Respuestas>> getPreguntaByID(@Query("pid") int _pregId);
+
+    @POST("api.php?ep=preguntaEdit")
+    Call<Integer> postEditarPregunta(@Body Preguntas preguntas);
 }

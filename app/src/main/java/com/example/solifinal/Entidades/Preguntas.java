@@ -8,6 +8,9 @@ public class Preguntas {
     private String pregunta;
     private String tipo;
     private String tipo_pregunta_id;
+    private int pregunta_id;
+    private int tipo_preg_id;
+    private int nvl;
 
     private List<Respuestas> respuestas;
 
@@ -58,4 +61,10 @@ public class Preguntas {
     public void setRespuestas(List<Respuestas> respuestas) {
         this.respuestas = respuestas;
     }
+
+    public void setPregunta_id(int pregunta_id) { this.pregunta_id = pregunta_id; }
+
+    public void setTipo_preg_id(int tipo_preg_id) { this.tipo_preg_id = tipo_preg_id; }
+
+    public void setNvl(int nvl) { this.nvl = nvl; }
 }

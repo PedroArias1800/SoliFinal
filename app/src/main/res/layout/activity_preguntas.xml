@@ -31,17 +31,17 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingHorizontal="10dp"
-        android:background="#FCF4EDE9">
+        android:background="#2A032F43">
 
         <EditText
-            android:id="@+id/enunciado"
+            android:id="@+id/pregunta"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:inputType="text|textMultiLine"
             android:gravity="top"
             android:background="@color/white"
             android:textSize="20dp"
-            android:hint="Enunciado"
+            android:hint="Pregunta"
             android:textColor="@color/black"/>
 
         <LinearLayout
@@ -49,73 +49,105 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginVertical="15dp">
 
             <Spinner
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
                 android:id="@+id/spnTipoPreg"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@color/white" />
 
             <Spinner
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
                 android:id="@+id/spnNivelPreg"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"/>
+                android:layout_marginLeft="15dp" />
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/respCorecta"
+        <LinearLayout
+            android:id="@+id/tipoPregMR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            android:textSize="20dp"
-            android:hint="Respuesta Correcta"
-            android:textColor="@color/black"/>
+            android:layout_marginVertical="15dp"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <EditText
-            android:id="@+id/posibleResp1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            android:textSize="20dp"
-            android:hint="Posible Respuesta"
-            android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/respCorecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:hint="Respuesta Correcta"
+                android:textColor="@color/black"/>
 
-        <EditText
-            android:id="@+id/posibleResp2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            android:textSize="20dp"
-            android:hint="Posible Respuesta"
-            android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/posibleResp1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:hint="Posible Respuesta"
+                android:textColor="@color/black"/>
 
-        <EditText
-            android:id="@+id/posibleResp3"
+            <EditText
+                android:id="@+id/posibleResp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:hint="Posible Respuesta"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/posibleResp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="20dp"
+                android:hint="Posible Respuesta"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipoPregVyF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            android:textSize="20dp"
-            android:hint="Posible Respuesta"
-            android:textColor="@color/black"/>
+            android:layout_marginVertical="15dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RadioGroup
+                android:id="@+id/rgVyF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/verdadero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Verdadero"/>
+
+                <RadioButton
+                    android:id="@+id/falso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Falso"/>
+            </RadioGroup>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -134,7 +166,8 @@
             android:text="Cancelar"
             style="?attr/materialButtonOutlinedStyle"
             android:textColor="#0026f0"
-            android:backgroundTint="@color/white"/>
+            android:backgroundTint="@color/white"
+            android:onClick="VolverAMantPreg"/>
 
         <Button
             android:id="@+id/btnGuardar"
@@ -145,8 +178,21 @@
             android:layout_marginLeft="30dp"
             style="?attr/materialButtonOutlinedStyle"
             android:textColor="#0026f0"
-            android:backgroundTint="@color/white"/>
+            android:backgroundTint="@color/white"
+            android:onClick="SaveRegistrarPregunta"/>
 
+        <Button
+            android:id="@+id/btnGuardarEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Guardar"
+            android:layout_marginLeft="30dp"
+            style="?attr/materialButtonOutlinedStyle"
+            android:textColor="#0026f0"
+            android:backgroundTint="@color/white"
+            android:visibility="gone"
+            android:onClick="SaveEditarPregunta"/>
     </LinearLayout>
 
     <LinearLayout
