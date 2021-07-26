@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,6 +31,7 @@ public class MensajeLoginActivity extends AppCompatActivity {
 
     Intent i;
     AnimationDrawable animationDrawable;
+    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,11 @@ public class MensajeLoginActivity extends AppCompatActivity {
 
         animationDrawable = (AnimationDrawable)imgCargando.getBackground();
         animationDrawable.start();
+
+        click = MediaPlayer.create(this, R.raw.click);
+
+        music = MediaPlayer.create(this, R.raw.resum);
+        music.start();
 
         InicializarControles();
 
@@ -68,15 +75,18 @@ public class MensajeLoginActivity extends AppCompatActivity {
     }
 
     public void Menu(View v){
+        click.start();
         startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
     }
 
     public void Utp(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
         startActivity(i);
     }
 
     public void UtpFisc(View view) {
+        click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
