@@ -50,10 +50,14 @@ public class MensajeLoginActivity extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.resum);
-        music.start();
 
         InicializarControles();
 
+    }
+
+    public void onResume(){
+        super.onResume();
+        music.start();
     }
 
     public void InicializarControles(){

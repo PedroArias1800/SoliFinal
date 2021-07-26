@@ -20,18 +20,23 @@ public class InfografiaActivity extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.menumusic);
+
+    }
+
+    public void onResume(){
+        super.onResume();
         music.start();
     }
 
     public void link1(View view) {
         click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=k8byUApEc4c"));
         startActivity(i);
     }
 
     public void link2(View view) {
         click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=b9U19JNQNYs"));
         startActivity(i);
     }
 

@@ -106,6 +106,7 @@ public class RegistrarseActivity extends AppCompatActivity {
             estudiante.setEdad(edad.getText().toString());
             estudiante.setEmail(correo.getText().toString());
             estudiante.setPassword(password.getText().toString());
+            estudiante.setTipo(3);
 
             String selectedFac = spnFacultades.getSelectedItem().toString();
             String facultadId = "";

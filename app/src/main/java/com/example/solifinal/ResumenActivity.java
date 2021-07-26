@@ -32,6 +32,9 @@ public class ResumenActivity extends AppCompatActivity {
 
     MediaPlayer click, music;
 
+    Intent i;
+    int Tipo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,9 @@ public class ResumenActivity extends AppCompatActivity {
         LoadListView(partida);
         MapearCampos();
         GuardarPartidaApi(_partidas);
+
+        i = getIntent();
+        Tipo = i.getIntExtra("Tipaje", 0);
 
         click = MediaPlayer.create(this, R.raw.click);
 
@@ -61,31 +67,37 @@ public class ResumenActivity extends AppCompatActivity {
         request.setPuntaje(ObtenerPuntaje(partidas));
         request.setDetalle(partidas);
 
-        Call<Integer> response = ApiService.getApiService().postRegistrarPartida(request);
-        response.enqueue(new Callback<Integer>() {
-            @Override
-            public void onResponse(Call<Integer> call, Response<Integer> response) {
-                if (response.isSuccessful()){
-                    int registrado = response.body();
-                    if (registrado > 0){
+        if(Tipo==3) {
 
+            Call<Integer> response = ApiService.getApiService().postRegistrarPartida(request);
+            response.enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                    if (response.isSuccessful()) {
+                        int registrado = response.body();
+                        if (registrado > 0) {
+
+                        }
+                    } else {
+                        int x = 1;
                     }
-                }else{
+                }
+
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
                     int x = 1;
                 }
-            }
+            });
 
-            @Override
-            public void onFailure(Call<Integer> call, Throwable t) {
-                int x = 1;
-            }
-        });
+        }
 
     }
 
     public void RegresarJuegos(View v){
         click.start();
-        startActivity(new Intent(getApplicationContext(), MenuLoginActivity.class));
+        Intent i = new Intent(getApplicationContext(), MenuLoginActivity.class);
+        i.putExtra("Tipaje", Tipo);
+        startActivity(i);
     }
 
     private void MapearCampos() {

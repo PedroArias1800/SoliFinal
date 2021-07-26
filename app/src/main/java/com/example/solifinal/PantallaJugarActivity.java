@@ -2,6 +2,7 @@ package com.example.solifinal;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -40,14 +41,18 @@ public class PantallaJugarActivity extends AppCompatActivity {
     List<Preguntas> _preguntas;
     Preguntas _preguntaActual;
 
-    LinearLayout lnRender;
+    LinearLayout lnRender, lnbtn;
     TextView nivel,tipo,pregunta;
     ImageView imgCargando;
+
+    Intent i;
 
     ProcesosDB _db;
     int _numPartida = 0;
     String _jugador = "", _juego="";
     int _nivel;
+
+    AnimationDrawable animationDrawable;
 
     TextView t;
     private CountDownTimer cdt;
@@ -55,6 +60,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
     private boolean run; //Verificando que el tiempo este corriendo
     private int sec;
     MediaPlayer click, music;
+    int Tipo;
 
     List<String> _selectedCheckboxs = new ArrayList<>();
 
@@ -62,6 +68,9 @@ public class PantallaJugarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantallajugar);
+
+        i = getIntent();
+        Tipo = i.getIntExtra("Tipaje", 0);
 
         _db = new ProcesosDB(getApplicationContext());
 
@@ -121,7 +130,11 @@ public class PantallaJugarActivity extends AppCompatActivity {
         nivel = (TextView)findViewById(R.id.lblNivel);
         tipo = (TextView)findViewById(R.id.lblTipoPregunta);
         pregunta = (TextView)findViewById(R.id.lblPregunta);
-        imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        imgCargando = (ImageView)findViewById(R.id.imgCargandoJugar);
+        imgCargando.setBackgroundResource(R.drawable.cargando);
+
+        animationDrawable = (AnimationDrawable)imgCargando.getBackground();
+        animationDrawable.start();
     }
 
     private void RenderPrimeraPregunta(){
@@ -142,6 +155,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
         if(indiceActual == _preguntas.size() - 1){
             Intent i = new Intent(getApplicationContext(),ResumenActivity.class);
+            i.putExtra("Tipaje", Tipo);
             i.putExtra("Partida",_numPartida);
             startActivity(i);
         }else{
@@ -174,11 +188,13 @@ public class PantallaJugarActivity extends AppCompatActivity {
             newCheck.setLayoutParams(params);
             newCheck.setText(respuesta.getRespuesta());
             newCheck.setId(View.generateViewId());
+            newCheck.setTextSize(18);
 
             group.addView(newCheck);
         }
 
         imgCargando.setVisibility(View.GONE);
+        lnRender.setGravity(View.TEXT_ALIGNMENT_CENTER);
         lnRender.addView(group);
         music.start();
 
@@ -197,6 +213,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
                 for (Respuestas res : pregunta.getRespuestas()){
                     if (res.getRespuesta().equals(selectedResponse) && res.getCorrecta().equals("1") && sec>0){
                         puntaje = Integer.parseInt(res.getPuntaje());
+                        music.reset();
                     }
                 }
 
@@ -241,10 +258,12 @@ public class PantallaJugarActivity extends AppCompatActivity {
                     puntaje = Integer.parseInt(pregunta.getRespuestas().get(0).getPuntaje());
                     respuestas = "1";
                     Toast.makeText(getApplicationContext(),"CORRECTO", Toast.LENGTH_LONG).show();
+                    music.reset();
                 }else{
 
                     Toast.makeText(getApplicationContext(),"INCORRECTO", Toast.LENGTH_LONG).show();
                     respuestas = "0";
+                    music.reset();
                 }
                 GuardarRespuesta(pregunta,respuestas,puntaje);
 
@@ -265,9 +284,11 @@ public class PantallaJugarActivity extends AppCompatActivity {
                     puntaje = Integer.parseInt(pregunta.getRespuestas().get(0).getPuntaje());
                     respuestas = "0";
                     Toast.makeText(getApplicationContext(),"CORRECTO", Toast.LENGTH_LONG).show();
+                    music.reset();
                 }else{
                     respuestas = "1";
                     Toast.makeText(getApplicationContext(),"INCORRECTO", Toast.LENGTH_LONG).show();
+                    music.reset();
                 }
                 GuardarRespuesta(pregunta,respuestas,puntaje);
 
@@ -297,8 +318,10 @@ public class PantallaJugarActivity extends AppCompatActivity {
                     Stop(); t.setText("");
                     if (newCheck.isChecked()){
                         _selectedCheckboxs.add(newCheck.getText().toString());
+                        music.reset();
                     }else{
                         _selectedCheckboxs.remove(newCheck.getText().toString());
+                        music.reset();
                     }
                 }
             });
@@ -324,6 +347,7 @@ public class PantallaJugarActivity extends AppCompatActivity {
                     for (Respuestas resp : pregunta.getRespuestas()){
                         if (resp.getRespuesta().equals(res) && resp.getCorrecta().equals("1") && sec>0){
                             puntaje = puntaje + Integer.parseInt(resp.getPuntaje());
+                            music.reset();
                         }
                     }
                 }

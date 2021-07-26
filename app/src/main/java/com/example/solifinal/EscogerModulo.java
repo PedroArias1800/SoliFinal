@@ -19,6 +19,8 @@ public class EscogerModulo extends AppCompatActivity {
 
     MediaPlayer click, music;
 
+    int Tipo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,14 @@ public class EscogerModulo extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.resum);
+
+        i = getIntent();
+        Tipo = i.getIntExtra("Tipaje", 0);
+
+    }
+
+    public void onResume(){
+        super.onResume();
         music.start();
     }
 
@@ -91,6 +101,7 @@ public class EscogerModulo extends AppCompatActivity {
         click.start();
         i = new Intent(getApplicationContext(), PantallaJugarActivity.class);
         i.putExtra("nivel", nivel);
+        i.putExtra("Tipaje", Tipo);
         startActivity(i);
     }
 
@@ -104,5 +115,11 @@ public class EscogerModulo extends AppCompatActivity {
         click.start();
         i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
     }
 }

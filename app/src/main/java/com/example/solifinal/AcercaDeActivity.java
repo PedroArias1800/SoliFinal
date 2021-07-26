@@ -21,6 +21,10 @@ public class AcercaDeActivity extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.born);
+    }
+
+    public void onResume(){
+        super.onResume();
         music.start();
     }
 

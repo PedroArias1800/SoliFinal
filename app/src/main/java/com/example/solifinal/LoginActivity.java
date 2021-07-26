@@ -22,6 +22,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     EditText u, p;
+    int tipo;
     ProcesosDB _db;
     MediaPlayer click, music;
 
@@ -77,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                                 estudiante.getEmail(),
                                 "",
                                 estudiante.getNombre_completo()
+
                             );
 
                             _db.GuardarSessionUsuario(user);
