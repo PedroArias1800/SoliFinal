@@ -30,11 +30,10 @@
         <activity android:name=".RecuperarContrasenaActivity" />
         <activity android:name=".PantallaRankingActivity" />
         <activity android:name=".AcercaDeActivity" />
-        <activity android:name=".JugarResultado" />
         <activity android:name=".MantDePreguntasActivity" />
         <activity android:name=".MantDeUsuariosActivity" />
         <activity android:name=".PreguntasActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
 
         </activity>
     </application>

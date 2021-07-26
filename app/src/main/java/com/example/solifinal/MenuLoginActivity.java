@@ -8,12 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.solifinal.BaseDeDatos.ProcesosDB;
-
-import org.w3c.dom.Text;
 
 public class MenuLoginActivity extends AppCompatActivity {
 
@@ -91,7 +88,7 @@ public class MenuLoginActivity extends AppCompatActivity {
     public void CerrarSesion(View v){
         _db = new ProcesosDB(getApplicationContext());
         _db.CerrarSesion();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
     }
 
     public void BotonCancelar(View v){

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     android:background="@drawable/fondo1"
     >
 
@@ -27,6 +27,7 @@
             app:cornerRadius="20dp"
             app:strokeColor="@color/white"
             android:background="@drawable/rounded_item"
+            android:backgroundTint="#062132"
             />
 
         <LinearLayout
