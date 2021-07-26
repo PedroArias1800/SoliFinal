@@ -93,7 +93,7 @@
                 android:text="--s"/>
 
             <TextView
-                android:text="Pregunta"
+                android:text="\n\n\n\n\n\n\nCargando..."
                 android:id="@+id/lblPregunta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

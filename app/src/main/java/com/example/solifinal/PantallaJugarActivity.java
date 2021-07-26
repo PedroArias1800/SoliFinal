@@ -343,11 +343,11 @@ public class PantallaJugarActivity extends AppCompatActivity {
 
     private void SetTimer(){
         if(_nivel==1){
-            t_res = 26000;
-        } else if(_nivel==2){
             t_res = 21000;
-        } else{
+        } else if(_nivel==2){
             t_res = 16000;
+        } else{
+            t_res = 11000;
         }
         run = false;
 
