@@ -1,6 +1,7 @@
 package com.example.solifinal;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -117,6 +118,16 @@ public class MantDePreguntasActivity extends AppCompatActivity{
     public void CrearPregunta(View view) {
         Intent i = new Intent(this, PreguntasActivity.class);
         //Toast.makeText(this,"Ya estoy en la segunda pantalla",Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
+
+    public void Utp(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
+        startActivity(i);
+    }
+
+    public void UtpFisc(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
     }
 }

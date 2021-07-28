@@ -70,6 +70,10 @@ public class MensajeLoginActivity extends AppCompatActivity {
             Tipaje="Administrador";
         }
 
+        if(Nombre.equals("Ramsés Gómez")){
+            Tipo=2;
+        }
+
         txtNombre = (TextView)findViewById(R.id.txtNombreLogin);
         txtNombre.setText(Tipaje+"\n"+Nombre);
 

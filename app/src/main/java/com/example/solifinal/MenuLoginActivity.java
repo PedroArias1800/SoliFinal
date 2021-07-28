@@ -57,7 +57,7 @@ public class MenuLoginActivity extends AppCompatActivity {
         imgDesplegar = (ImageView)findViewById(R.id.DesplegarLogOut);
 
         //Tipo=i.getIntExtra("Tipaje", 3);
-        Tipo=3;
+        Tipo=2;
 
         if(Tipo==3){
             jugar.setVisibility(View.VISIBLE);

@@ -308,13 +308,13 @@ public class PreguntasActivity extends AppCompatActivity implements AdapterView.
             Respuestas rsp_i2 = new Respuestas();
             Respuestas rsp_i3 = new Respuestas();
 
-            rsp_c.setRespuesta_id(Integer.parseInt(_respuestas.get(0).getId()));
+            rsp_c.setRespuesta_id(Integer.parseInt(_respuestas.get(4).getId()));
             respuestas.add(rsp_c);
-            rsp_i1.setRespuesta_id(Integer.parseInt(_respuestas.get(1).getId()));
+            rsp_i1.setRespuesta_id(Integer.parseInt(_respuestas.get(5).getId()));
             respuestas.add(rsp_i1);
-            rsp_i2.setRespuesta_id(Integer.parseInt(_respuestas.get(2).getId()));
+            rsp_i2.setRespuesta_id(Integer.parseInt(_respuestas.get(6).getId()));
             respuestas.add(rsp_i2);
-            rsp_i3.setRespuesta_id(Integer.parseInt(_respuestas.get(3).getId()));
+            rsp_i3.setRespuesta_id(Integer.parseInt(_respuestas.get(7).getId()));
             respuestas.add(rsp_i3);
 
             preguntas.setRespuestas(respuestas);
@@ -346,4 +346,6 @@ public class PreguntasActivity extends AppCompatActivity implements AdapterView.
     public void VolverAMantPreg(View view){
         startActivity(new Intent(getApplicationContext(), MantDePreguntasActivity.class));
     }
+
+
 }
