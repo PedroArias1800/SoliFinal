@@ -34,6 +34,11 @@ public class MenuLoginActivity extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.menumusic);
+
+    }
+
+    public void onResume(){
+        super.onResume();
         music.start();
     }
 
@@ -52,7 +57,7 @@ public class MenuLoginActivity extends AppCompatActivity {
         imgDesplegar = (ImageView)findViewById(R.id.DesplegarLogOut);
 
         //Tipo=i.getIntExtra("Tipaje", 3);
-        Tipo=3;
+        Tipo=2;
 
         if(Tipo==3){
             jugar.setVisibility(View.VISIBLE);
@@ -125,7 +130,9 @@ public class MenuLoginActivity extends AppCompatActivity {
 
     public void OpcionJugar(View view) {
         click.start();
-        startActivity(new Intent(getApplicationContext(), EscogerModulo.class));
+        Intent i = new Intent(getApplicationContext(), EscogerModulo.class);
+        i.putExtra("Tipaje", Tipo);
+        startActivity(i);
     }
 
     public void OpcionRanking(View view) {

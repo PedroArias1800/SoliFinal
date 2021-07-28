@@ -21,6 +21,10 @@ public class AcercaDeActivity extends AppCompatActivity {
         click = MediaPlayer.create(this, R.raw.click);
 
         music = MediaPlayer.create(this, R.raw.born);
+    }
+
+    public void onResume(){
+        super.onResume();
         music.start();
     }
 
@@ -80,5 +84,11 @@ public class AcercaDeActivity extends AppCompatActivity {
         click.start();
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
         startActivity(i);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        music.pause();
     }
 }

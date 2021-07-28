@@ -193,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="     Cancelar"
-                android:textSize="15dp"
+                android:textSize="18dp"
                 android:onClick="BotonCancelar"
                 android:visibility="gone"
                 style="?attr/materialButtonOutlinedStyle"
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:text="    Cerrar Sesión"
                 android:layout_marginLeft="25dp"
-                android:textSize="15dp"
+                android:textSize="18dp"
                 android:onClick="CerrarSesion"
                 android:visibility="gone"
                 style="?attr/materialButtonOutlinedStyle"
@@ -227,7 +227,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-100dp"
-            android:layout_marginLeft="22dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
@@ -244,7 +244,7 @@
                 android:src="@drawable/salirwh"
                 android:id="@+id/imgSalirwh"
                 android:visibility="gone"
-                android:layout_marginLeft="135dp"/>
+                android:layout_marginLeft="158dp"/>
 
         </LinearLayout>
 

@@ -7,12 +7,15 @@
     android:background="@drawable/fondo1">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
+        android:layout_width="225dp"
+        android:layout_height="120dp"
+        android:padding="5dp"
         android:src="@drawable/logo_soli_claro"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_item"
+        android:backgroundTint="#062132"/>
 
     <TextView
         android:layout_width="match_parent"

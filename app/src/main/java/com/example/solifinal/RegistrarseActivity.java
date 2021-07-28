@@ -106,15 +106,18 @@ public class RegistrarseActivity extends AppCompatActivity {
             estudiante.setEdad(edad.getText().toString());
             estudiante.setEmail(correo.getText().toString());
             estudiante.setPassword(password.getText().toString());
+            estudiante.setTipo(3);
 
             String selectedFac = spnFacultades.getSelectedItem().toString();
             String facultadId = "";
+
             for(Facultad facultad : _facultades){
                 if (facultad.getFacultad().equals(selectedFac)){
                     facultadId = facultad.getId();
                 }
             }
             estudiante.setFacultad(facultadId);
+            estudiante.setTipo(3);
 
             Call<Integer> response = ApiService.getApiService().postRegistrarEstudiante(estudiante);
             response.enqueue(new Callback<Integer>() {

@@ -15,13 +15,20 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
         >
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/icono"
+            android:layout_width="225dp"
+            android:layout_height="120dp"
+            android:padding="5dp"
+            android:src="@drawable/logo_soli_claro"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            />
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            android:background="@drawable/rounded_item"
+            android:backgroundTint="#062132"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,12 +37,7 @@
             android:gravity="center"
             android:layout_marginBottom="20dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SOLI - Software Life"
-                android:textSize="20dp"
-                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +77,7 @@
             android:onClick="Menu"
             android:text="Ir Al Menu Principal"
             android:textSize="20dp"
-            android:layout_marginTop="-41.6dp"
+            android:layout_marginTop="-29.8dp"
             android:layout_marginBottom="10dp"
             style="?attr/materialButtonOutlinedStyle"
             app:cornerRadius="20dp"
@@ -89,7 +91,7 @@
             android:id="@+id/imgCargando"
             android:layout_gravity="right"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="-52.5dp"/>
+            android:layout_marginTop="-52dp"/>
 
     </LinearLayout>
 
